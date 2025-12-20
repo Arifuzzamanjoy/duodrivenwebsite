@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block title %}Page Not Found - DUODRIVEN{% endblock %}
+
+{% block extra_styles %}
+<style>
+    .error-page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: var(--spacing-2xl);
+        background: var(--color-bg-primary);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .error-bg {
+        position: absolute;
+        inset: 0;
+        background: 
+            radial-gradient(ellipse 50% 50% at 20% 30%, rgba(6, 182, 212, 0.05) 0%, transparent 50%),
+            radial-gradient(ellipse 40% 60% at 80% 70%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+    }
+    
+    .error-grid {
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        background-size: 50px 50px;
+        opacity: 0.5;
+    }
+    
+    .error-content {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        max-width: 600px;
+    }
+    
+    .error-code {
+        font-size: clamp(8rem, 20vw, 15rem);
+        font-weight: 800;
+        line-height: 1;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 80px rgba(6, 182, 212, 0.3);
+        animation: pulse-glow 3s ease-in-out infinite;
+    }
+    
+    @keyframes pulse-glow {
+        0%, 100% { filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.3)); }
+        50% { filter: drop-shadow(0 0 40px rgba(6, 182, 212, 0.5)); }
+    }
+    
+    .error-title {
+        font-size: var(--font-size-3xl);
+        color: var(--color-text-primary);
+        margin: var(--spacing-md) 0;
+    }
+    
+    .error-message {
+        font-size: var(--font-size-lg);
+        color: var(--color-text-secondary);
+        margin-bottom: var(--spacing-xl);
+        line-height: 1.6;
+    }
+    
+    .error-actions {
+        display: flex;
+        gap: var(--spacing-md);
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .glitch-line {
+        position: absolute;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--color-accent-cyan), transparent);
+        animation: glitch-scan 4s ease-in-out infinite;
+    }
+    
+    .glitch-line-1 {
+        top: 30%;
+        left: 0;
+        right: 0;
+        animation-delay: 0s;
+    }
+    
+    .glitch-line-2 {
+        top: 60%;
+        left: 0;
+        right: 0;
+        animation-delay: 2s;
+    }
+    
+    @keyframes glitch-scan {
+        0%, 100% { transform: translateX(-100%); opacity: 0; }
+        50% { transform: translateX(100%); opacity: 1; }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<main class="error-page">
+    <div class="error-bg"></div>
+    <div class="error-grid"></div>
+    <div class="glitch-line glitch-line-1"></div>
+    <div class="glitch-line glitch-line-2"></div>
+    
+    <div class="error-content">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-message">
+            The page you're looking for seems to have drifted into the digital void. 
+            Perhaps it was optimized out of existence, or maybe it never existed at all.
+        </p>
+        <div class="error-actions">
+            <a href="/" class="btn btn-primary">
+                <span>Return Home</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+            </a>
+            <a href="/#contact" class="btn btn-secondary">
+                <span>Contact Us</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</main>
+{% endblock %}

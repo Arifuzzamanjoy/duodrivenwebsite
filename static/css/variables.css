@@ -1,0 +1,240 @@
+/*
+ * DUODRIVEN Design System
+ * CSS Variables & Design Tokens
+ * Full-Stack Growth Engineering
+ */
+
+:root {
+  /* ============================================
+   * PRIMARY BACKGROUNDS
+   * Dark-first design system
+   * ============================================ */
+  --color-bg-primary: #030712;      /* Near black - main bg */
+  --color-bg-secondary: #0F172A;    /* Deep navy - sections */
+  --color-bg-tertiary: #1E293B;     /* Slate - cards */
+  --color-bg-elevated: #334155;     /* Elevated elements */
+  
+  /* ============================================
+   * ACCENT COLORS
+   * Electric, cyberpunk-inspired palette
+   * ============================================ */
+  --color-accent-blue: #3B82F6;     /* Electric blue - primary accent */
+  --color-accent-cyan: #06B6D4;     /* Cyan - hover states */
+  --color-accent-emerald: #10B981;  /* Emerald - success/highlights */
+  --color-accent-purple: #8B5CF6;   /* Purple - AI/neural elements */
+  --color-accent-pink: #EC4899;     /* Pink - special highlights */
+  --color-accent-orange: #F97316;   /* Orange - warnings/CTAs */
+  
+  /* ============================================
+   * TEXT COLORS
+   * High contrast for accessibility
+   * ============================================ */
+  --color-text-primary: #F8FAFC;    /* White - main text */
+  --color-text-secondary: #94A3B8;  /* Muted - secondary */
+  --color-text-tertiary: #64748B;   /* Dimmed - labels */
+  --color-text-accent: #3B82F6;     /* Links */
+  --color-text-inverse: #030712;    /* On light backgrounds */
+  
+  /* ============================================
+   * SEMANTIC COLORS
+   * For states and feedback
+   * ============================================ */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+  
+  /* ============================================
+   * GLOW EFFECTS
+   * Neon/cyberpunk aesthetic
+   * ============================================ */
+  --glow-blue: 0 0 20px rgba(59, 130, 246, 0.5);
+  --glow-blue-strong: 0 0 40px rgba(59, 130, 246, 0.7);
+  --glow-cyan: 0 0 20px rgba(6, 182, 212, 0.5);
+  --glow-cyan-strong: 0 0 40px rgba(6, 182, 212, 0.7);
+  --glow-purple: 0 0 20px rgba(139, 92, 246, 0.5);
+  --glow-purple-strong: 0 0 40px rgba(139, 92, 246, 0.7);
+  --glow-emerald: 0 0 20px rgba(16, 185, 129, 0.5);
+  
+  /* ============================================
+   * GRADIENTS
+   * Dynamic, modern gradients
+   * ============================================ */
+  --gradient-hero: linear-gradient(135deg, #030712 0%, #0F172A 50%, #1E1E3F 100%);
+  --gradient-card: linear-gradient(145deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.8));
+  --gradient-card-hover: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9));
+  --gradient-blue-purple: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+  --gradient-cyan-blue: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
+  --gradient-text: linear-gradient(135deg, #3B82F6 0%, #06B6D4 50%, #8B5CF6 100%);
+  --gradient-glow: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+  --gradient-radial: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+  
+  /* ============================================
+   * BORDERS
+   * Glowing border effects
+   * ============================================ */
+  --border-subtle: 1px solid rgba(148, 163, 184, 0.1);
+  --border-default: 1px solid rgba(148, 163, 184, 0.2);
+  --border-glow: 1px solid rgba(59, 130, 246, 0.3);
+  --border-glow-strong: 1px solid rgba(59, 130, 246, 0.6);
+  --border-accent: 1px solid var(--color-accent-blue);
+  
+  /* ============================================
+   * SHADOWS
+   * Depth and elevation
+   * ============================================ */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.4), 0 10px 10px rgba(0, 0, 0, 0.2);
+  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.3);
+  
+  /* ============================================
+   * TYPOGRAPHY
+   * Font families and sizes
+   * ============================================ */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  /* Font Sizes - Using clamp for fluid typography */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+  --text-3xl: clamp(1.875rem, 1.4rem + 2.375vw, 2.5rem);
+  --text-4xl: clamp(2.25rem, 1.6rem + 3.25vw, 3.5rem);
+  --text-5xl: clamp(3rem, 2rem + 5vw, 4.5rem);
+  --text-6xl: clamp(3.75rem, 2.5rem + 6.25vw, 6rem);
+  
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+  
+  /* Letter Spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+  
+  /* Font Weights */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  
+  /* ============================================
+   * SPACING
+   * Consistent spacing scale
+   * ============================================ */
+  --space-0: 0;
+  --space-1: 0.25rem;    /* 4px */
+  --space-2: 0.5rem;     /* 8px */
+  --space-3: 0.75rem;    /* 12px */
+  --space-4: 1rem;       /* 16px */
+  --space-5: 1.25rem;    /* 20px */
+  --space-6: 1.5rem;     /* 24px */
+  --space-8: 2rem;       /* 32px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px */
+  --space-16: 4rem;      /* 64px */
+  --space-20: 5rem;      /* 80px */
+  --space-24: 6rem;      /* 96px */
+  --space-32: 8rem;      /* 128px */
+  
+  /* ============================================
+   * BORDER RADIUS
+   * Rounded corners scale
+   * ============================================ */
+  --radius-none: 0;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --radius-full: 9999px;
+  
+  /* ============================================
+   * TRANSITIONS
+   * Smooth animation timings
+   * ============================================ */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+  --transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-smooth: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* ============================================
+   * Z-INDEX SCALE
+   * Layering system
+   * ============================================ */
+  --z-below: -1;
+  --z-base: 0;
+  --z-above: 1;
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-fixed: 30;
+  --z-modal-backdrop: 40;
+  --z-modal: 50;
+  --z-popover: 60;
+  --z-tooltip: 70;
+  --z-toast: 80;
+  --z-max: 9999;
+  
+  /* ============================================
+   * CONTAINER WIDTHS
+   * Max-width constraints
+   * ============================================ */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
+  
+  /* ============================================
+   * GLASSMORPHISM
+   * Frosted glass effects
+   * ============================================ */
+  --glass-bg: rgba(15, 23, 42, 0.7);
+  --glass-bg-light: rgba(15, 23, 42, 0.5);
+  --glass-bg-dark: rgba(3, 7, 18, 0.8);
+  --glass-blur: blur(16px);
+  --glass-blur-strong: blur(24px);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+ * DARK MODE ADJUSTMENTS (if needed)
+ * Already dark by default
+ * ============================================ */
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Keep dark mode - this is intentional for brand consistency */
+  }
+}
+
+/* ============================================
+ * REDUCED MOTION
+ * Accessibility considerations
+ * ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-normal: 0ms;
+    --transition-slow: 0ms;
+    --transition-bounce: 0ms;
+    --transition-smooth: 0ms;
+  }
+}

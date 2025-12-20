@@ -1,0 +1,777 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero min-h-screen relative flex items-center overflow-hidden" id="hero">
+    <!-- Particle Canvas Background -->
+    <canvas id="particles-canvas"></canvas>
+    
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-radial pointer-events-none"></div>
+    
+    <!-- Hero Content -->
+    <div class="container relative" style="z-index: 10;">
+        <div class="max-w-4xl mx-auto text-center pt-20 lg:pt-32 pb-32 lg:pb-40">
+            <!-- Eyebrow -->
+            <div class="mb-6 reveal">
+                <span class="badge">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2"></path>
+                    </svg>
+                    FULL-STACK GROWTH ENGINEERING
+                </span>
+            </div>
+            
+            <!-- Main Headline -->
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight reveal">
+                We Don't Do Marketing.<br>
+                <span class="gradient-text-animated">We Build Autonomous</span><br>
+                <span class="gradient-text-animated">Revenue Systems.</span>
+            </h1>
+            
+            <!-- Subheadline -->
+            <p class="text-lg md:text-xl text-secondary max-w-2xl mx-auto mb-10 reveal">
+                Why hire a marketing agency when you can hire an engineering firm that understands growth?
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
+                <a href="/contact" class="btn btn-primary btn-lg btn-arrow">
+                    Engineer My Growth
+                    <span class="arrow">→</span>
+                </a>
+                <a href="#services" class="btn btn-secondary btn-lg">
+                    See Our Systems ↓
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Stats Ticker -->
+    <div class="ticker-wrapper" style="position: absolute; bottom: 0; left: 0; right: 0;">
+        <div class="ticker">
+            <div class="ticker-item"><span class="dot"></span><strong class="text-primary">40-60%</strong> Efficiency Gains</div>
+            <div class="ticker-item"><span class="dot"></span><strong class="text-primary">94%</strong> Cost Reduction</div>
+            <div class="ticker-item"><span class="dot"></span><strong class="text-primary">24/7</strong> Autonomous Operations</div>
+            <div class="ticker-item"><span class="dot"></span><strong class="text-primary">Zero</strong> Marginal Cost Scaling</div>
+            <div class="ticker-item"><span class="dot"></span><strong class="text-primary">21x</strong> Faster Turnaround</div>
+            <div class="ticker-item"><span class="dot"></span><strong class="text-primary">300M+</strong> AI Queries Weekly</div>
+            <!-- Duplicate for seamless loop -->
+            <div class="ticker-item"><span class="dot"></span><strong class="text-primary">40-60%</strong> Efficiency Gains</div>
+            <div class="ticker-item"><span class="dot"></span><strong class="text-primary">94%</strong> Cost Reduction</div>
+            <div class="ticker-item"><span class="dot"></span><strong class="text-primary">24/7</strong> Autonomous Operations</div>
+            <div class="ticker-item"><span class="dot"></span><strong class="text-primary">Zero</strong> Marginal Cost Scaling</div>
+            <div class="ticker-item"><span class="dot"></span><strong class="text-primary">21x</strong> Faster Turnaround</div>
+            <div class="ticker-item"><span class="dot"></span><strong class="text-primary">300M+</strong> AI Queries Weekly</div>
+        </div>
+    </div>
+</section>
+
+<!-- Problem/Solution Section -->
+<section class="section" id="problem-solution">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="eyebrow">The Strategic Shift</span>
+            <h2>Traditional Agencies Are <span class="gradient-text">Fundamentally Broken</span></h2>
+            <p>In an era where 60% of searches end without a click and AI synthesizes information before humans see a website, agencies optimizing for "impressions" are selling 2019 solutions to 2025 problems.</p>
+        </div>
+        
+        <div class="comparison">
+            <!-- Old Way -->
+            <div class="comparison-card old reveal reveal-left">
+                <h4>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                    </svg>
+                    THE OLD WAY
+                </h4>
+                <ul>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        Agencies rent your attention
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        Billing hours, not outcomes
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        Campaigns that expire
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        Manual everything
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        Data silos everywhere
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- New Way -->
+            <div class="comparison-card new reveal reveal-right">
+                <h4>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    THE DUODRIVEN WAY
+                </h4>
+                <ul>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Systems that compound
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Infrastructure, not invoices
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Autonomous Revenue Systems
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        AI agents working 24/7
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Unified intelligence layer
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="section" id="services" style="background: var(--color-bg-secondary);">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="eyebrow">Service Verticals</span>
+            <h2>The Hybrid <span class="gradient-text">Service Ecosystem</span></h2>
+            <p>Three interconnected verticals designed to address every dimension of modern revenue generation.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Growth Infrastructure -->
+            <div class="service-card reveal" data-service="growth" onclick="toggleServiceCard(this)">
+                <div class="icon-wrapper">📊</div>
+                <span class="eyebrow">Vertical A</span>
+                <h3>Growth Infrastructure</h3>
+                <p>Revenue Architecture — The foundation upon which all growth systems are built.</p>
+                <span class="explore-link">
+                    Explore
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </span>
+                <div class="details">
+                    <ul>
+                        <li>Social Media Architecture — Brand voice engineering & community velocity systems</li>
+                        <li>High-Intent Acquisition (PPC) — CAC-optimized Google & Meta campaigns</li>
+                        <li>Conversion-Focused UI/UX — Design as revenue engineering</li>
+                        <li>Measurement Infrastructure — Meta Pixel, CAPI, GA4, server-side tagging</li>
+                        <li>Concierge Account Management — Embedded growth partners</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Autonomous Operations -->
+            <div class="service-card reveal" data-service="autonomous" onclick="toggleServiceCard(this)">
+                <div class="icon-wrapper">🤖</div>
+                <span class="eyebrow">Vertical B</span>
+                <h3>Autonomous Operations</h3>
+                <p>Removing Humans From the Loop — The agentic infrastructure differentiator.</p>
+                <span class="explore-link">
+                    Explore
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </span>
+                <div class="details">
+                    <ul>
+                        <li>Agentic AI Deployment — Custom agents on n8n & LangChain (40-60% efficiency gains)</li>
+                        <li>Voice AI Systems — Retell AI & Vapi for 24/7 humanoid calling</li>
+                        <li>Custom MCP Servers — Model Context Protocol for standardized agent tools</li>
+                        <li>Internal Ops Agents — AI Project Managers, Analysts, QA systems</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Generative Creative -->
+            <div class="service-card reveal" data-service="creative" onclick="toggleServiceCard(this)">
+                <div class="icon-wrapper">🎨</div>
+                <span class="eyebrow">Vertical C</span>
+                <h3>Generative Creative</h3>
+                <p>Infinite Asset Production — The Visual Intelligence stack eliminates creative bottlenecks.</p>
+                <span class="explore-link">
+                    Explore
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </span>
+                <div class="details">
+                    <ul>
+                        <li>Visual Intelligence (LoRA) — Fine-tuned Flux Dev & SDXL on your brand DNA</li>
+                        <li>Video Pipelines — Self-hosted Wan 2.2 Multi-GPU architecture</li>
+                        <li>Infinite Asset Scaling — Hundreds of variations daily, A/B test at speed of thought</li>
+                        <li>Hyper-Personalization — 10,000 unique ads for 10,000 unique leads</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Innovation Layer Section -->
+<section class="section" id="innovation">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="eyebrow">2025 High-Ticket Services</span>
+            <h2>The Aligned <span class="gradient-text">Innovation Layer</span></h2>
+            <p>Cutting-edge capabilities that most agencies cannot offer because they lack the technical infrastructure to execute.</p>
+        </div>
+        
+        <!-- Tabs -->
+        <div class="tabs mb-8 reveal">
+            <button class="tab active" data-tab="aeo" onclick="switchTab('aeo')">AEO & Brand Sovereignty</button>
+            <button class="tab" data-tab="agents" onclick="switchTab('agents')">Agentic Workflows</button>
+            <button class="tab" data-tab="personalization" onclick="switchTab('personalization')">Hyper-Personalization</button>
+            <button class="tab" data-tab="sovereign" onclick="switchTab('sovereign')">Sovereign AI</button>
+        </div>
+        
+        <!-- Tab Panels -->
+        <div class="tab-panels">
+            <!-- AEO Panel -->
+            <div class="tab-panel active" id="panel-aeo">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="badge badge-cyan mb-4">Answer Engine Optimization</span>
+                        <h3 class="text-3xl font-bold mb-4">Your Brand as the <span class="gradient-text">Canonical Answer</span></h3>
+                        <p class="text-secondary mb-6">
+                            60% of searches end without a click. ChatGPT serves 300M weekly users. Perplexity processes 100M queries per week. Google AI Overviews appear in 16% of searches.
+                        </p>
+                        <p class="text-secondary mb-8">
+                            We ensure your brand is the answer that AI delivers.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <span class="text-accent">•</span>
+                                <div>
+                                    <strong class="text-primary">Citation Architecture</strong>
+                                    <p class="text-sm text-secondary">Structured for ChatGPT, Perplexity, Gemini citation</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-accent">•</span>
+                                <div>
+                                    <strong class="text-primary">Crawler Whitelisting</strong>
+                                    <p class="text-sm text-secondary">68% of sites unknowingly block AI crawlers</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-accent">•</span>
+                                <div>
+                                    <strong class="text-primary">Brand Sentiment Monitoring</strong>
+                                    <p class="text-sm text-secondary">Track how AI perceives your brand</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-accent">•</span>
+                                <div>
+                                    <strong class="text-primary">Zero-Click Funnel Design</strong>
+                                    <p class="text-sm text-secondary">Win before the click happens</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card p-8">
+                        <div class="text-center mb-6">
+                            <span class="text-6xl">🔍</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="stat-card">
+                                <div class="stat-value">12-18%</div>
+                                <div class="stat-label">Higher Conversion</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">6-10x</div>
+                                <div class="stat-label">Better CTR</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">20-30%</div>
+                                <div class="stat-label">Conversion Rate</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">25%</div>
+                                <div class="stat-label">Search Decline by 2026</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Agents Panel -->
+            <div class="tab-panel" id="panel-agents">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="badge badge-purple mb-4">Internal Operations Agents</span>
+                        <h3 class="text-3xl font-bold mb-4">Beyond Chatbots — <span class="gradient-text">True Autonomous Execution</span></h3>
+                        <p class="text-secondary mb-6">
+                            Deploy multi-agent ecosystems where AI systems collaborate: Sales agents updating forecasts. Finance agents adjusting budgets. Operations agents scheduling production.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="card p-4">
+                                <h4 class="font-semibold mb-2">AI Project Manager</h4>
+                                <p class="text-sm text-secondary">Assigns tasks in Asana/ClickUp, tracks progress, escalates blockers</p>
+                            </div>
+                            <div class="card p-4">
+                                <h4 class="font-semibold mb-2">AI Research Analyst</h4>
+                                <p class="text-sm text-secondary">Market intelligence on autopilot, competitor monitoring</p>
+                            </div>
+                            <div class="card p-4">
+                                <h4 class="font-semibold mb-2">AI Quality Auditor</h4>
+                                <p class="text-sm text-secondary">Reviews deliverables at scale, no reviewer fatigue</p>
+                            </div>
+                            <div class="card p-4">
+                                <h4 class="font-semibold mb-2">AI Customer Success</h4>
+                                <p class="text-sm text-secondary">Proactive churn prevention, usage pattern monitoring</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card p-8 text-center">
+                        <span class="text-6xl mb-4 block">🤖</span>
+                        <h4 class="text-xl font-semibold mb-4">Multi-Agent Ecosystem</h4>
+                        <p class="text-secondary">AI agents that collaborate across departments, all working in sync.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Personalization Panel -->
+            <div class="tab-panel" id="panel-personalization">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="badge badge-emerald mb-4">Generative Marketing at 1:1 Scale</span>
+                        <h3 class="text-3xl font-bold mb-4"><span class="gradient-text">10,000 Unique Ads</span> for 10,000 Unique Leads</h3>
+                        <p class="text-secondary mb-6">
+                            72% of consumers only engage with personalized messaging. Our Visual AI stack generates unique assets for individual leads, in real-time.
+                        </p>
+                        <ul class="space-y-4 mb-6">
+                            <li class="flex items-start gap-3">
+                                <span class="text-emerald">•</span>
+                                <span><strong>Dynamic Asset Generation</strong> — LoRA-tuned brand models</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-emerald">•</span>
+                                <span><strong>Volume-First Testing</strong> — Daily creative refreshes</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-emerald">•</span>
+                                <span><strong>Copy Personalization</strong> — Every message calibrated to individual profiles</span>
+                            </li>
+                        </ul>
+                        <div class="card p-4" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2);">
+                            <p class="text-sm text-emerald"><strong>BCG Documented:</strong> 20% average sales increase with AI-driven personalization</p>
+                        </div>
+                    </div>
+                    <div class="card p-8 text-center">
+                        <span class="text-6xl mb-4 block">🎯</span>
+                        <div class="stat-value text-5xl gradient-text mb-2">20%</div>
+                        <p class="text-secondary">Average sales increase (BCG)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sovereign Panel -->
+            <div class="tab-panel" id="panel-sovereign">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="badge mb-4">Self-Hosted AI Systems</span>
+                        <h3 class="text-3xl font-bold mb-4">Your Data <span class="gradient-text">Never Leaves</span> Your Infrastructure</h3>
+                        <p class="text-secondary mb-6">
+                            For regulated industries — healthcare, finance, government, defense. GDPR. HIPAA. EU AI Act. The US CLOUD Act. Full compliance by design.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-blue)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                <span><strong>Self-Hosted Image Generation</strong> — Flux/SDXL on your servers</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-blue)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                <span><strong>Self-Hosted Video Production</strong> — Multi-GPU Wan 2.2</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-blue)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                <span><strong>Private Agent Orchestration</strong> — Zero external dependencies</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-blue)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                <span><strong>Audit-Ready Architecture</strong> — Full traceability</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card p-8 text-center">
+                        <span class="text-6xl mb-4 block">🔒</span>
+                        <h4 class="text-xl font-semibold mb-4">Data Sovereignty</h4>
+                        <p class="text-secondary mb-4">100% on-premise. Zero vendor lock-in.</p>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="badge badge-cyan">GDPR</span>
+                            <span class="badge badge-cyan">HIPAA</span>
+                            <span class="badge badge-cyan">EU AI Act</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Case Studies Section -->
+<section class="section" id="case-studies" style="background: var(--color-bg-secondary);">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="eyebrow">Engineering Showcases</span>
+            <h2>Challenge → Solution → <span class="gradient-text">Financial Impact</span></h2>
+            <p>Real outcomes from real deployments. No vanity metrics.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 gap-8">
+            <!-- Case Study 1: Image Generation -->
+            <div class="card p-8 reveal">
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <div class="flex-1">
+                        <span class="badge badge-purple mb-4">Project A</span>
+                        <h3 class="text-2xl font-bold mb-4">Self-Hosted Image Generation Engine</h3>
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-secondary mb-2">THE CHALLENGE:</h4>
+                            <p class="text-secondary text-sm">
+                                E-commerce client required 500+ product lifestyle images monthly. Model hiring and studio costs exceeded $40,000/month. Turnaround time: 3 weeks per batch.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-secondary mb-2">THE SOLUTION:</h4>
+                            <p class="text-secondary text-sm">
+                                Self-hosted Flux Dev + Custom LoRA trained on 500 approved brand images. Automated pipeline: prompt → generation → quality filtering → asset library.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 flex-1">
+                        <div class="stat-card">
+                            <div class="stat-value text-4xl"><span class="counter" data-target="94">0</span>%</div>
+                            <div class="stat-label">Cost Reduction</div>
+                            <p class="text-xs text-secondary mt-1">$40K → $2.4K/month</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value text-4xl"><span class="counter" data-target="21">0</span>x</div>
+                            <div class="stat-label">Faster</div>
+                            <p class="text-xs text-secondary mt-1">3 weeks → 24 hours</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value text-4xl"><span class="counter" data-target="4">0</span>x</div>
+                            <div class="stat-label">Volume Increase</div>
+                            <p class="text-xs text-secondary mt-1">500 → 2,000+ images</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Case Study 2: Voice AI -->
+            <div class="card p-8 reveal">
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <div class="flex-1">
+                        <span class="badge badge-cyan mb-4">Project B</span>
+                        <h3 class="text-2xl font-bold mb-4">Humanoid Calling Agent</h3>
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-secondary mb-2">THE CHALLENGE:</h4>
+                            <p class="text-secondary text-sm">
+                                B2B SaaS client's SDR team burned $180,000/year on lead qualification calls. 70% of calls resulted in disqualification. Response time averaged 4 hours.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-secondary mb-2">THE SOLUTION:</h4>
+                            <p class="text-secondary text-sm">
+                                Retell AI voice agent with custom conversation flows. CRM integration for real-time data enrichment. Qualification logic mirroring top-performer SDR decision trees.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 flex-1">
+                        <div class="stat-card">
+                            <div class="stat-value text-4xl"><span class="counter" data-target="90">0</span>%</div>
+                            <div class="stat-label">Labor Reduction</div>
+                            <p class="text-xs text-secondary mt-1">$180K → $18K/year</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value text-4xl">24/7</div>
+                            <div class="stat-label">Coverage</div>
+                            <p class="text-xs text-secondary mt-1">168 hrs/week</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value text-4xl">90s</div>
+                            <div class="stat-label">Response Time</div>
+                            <p class="text-xs text-secondary mt-1">From 4 hours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Case Study 3: Video Engine -->
+            <div class="card p-8 reveal">
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <div class="flex-1">
+                        <span class="badge badge-emerald mb-4">Project C</span>
+                        <h3 class="text-2xl font-bold mb-4">Multi-GPU Video Engine</h3>
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-secondary mb-2">THE CHALLENGE:</h4>
+                            <p class="text-secondary text-sm">
+                                Media company needed 100+ short-form videos monthly. External API costs: $15/video. Rate limits capped at 50/day. NDA restrictions prevented external data sharing.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-secondary mb-2">THE SOLUTION:</h4>
+                            <p class="text-secondary text-sm">
+                                Self-hosted Wan 2.2 across 4x A100 GPUs. Queuing system for parallel generation. Content calendar integration. 100% data sovereignty maintained.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 flex-1">
+                        <div class="stat-card">
+                            <div class="stat-value text-4xl"><span class="counter" data-target="97">0</span>%</div>
+                            <div class="stat-label">Cost Reduction</div>
+                            <p class="text-xs text-secondary mt-1">$15 → $0.40/video</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value text-4xl"><span class="counter" data-target="8">0</span>x</div>
+                            <div class="stat-label">Capacity</div>
+                            <p class="text-xs text-secondary mt-1">50 → 400+/day</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value text-4xl">4mo</div>
+                            <div class="stat-label">ROI Breakeven</div>
+                            <p class="text-xs text-secondary mt-1">Infrastructure paid</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technology Stack Section -->
+<section class="section" id="technology">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="eyebrow">Engineering Stack</span>
+            <h2>The Technical <span class="gradient-text">Infrastructure</span></h2>
+            <p>Built on battle-tested technologies. No black boxes.</p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- AI/ML -->
+            <div class="card p-6 reveal">
+                <h4 class="font-semibold mb-4 flex items-center gap-2">
+                    <span class="text-purple">⚡</span> AI/ML
+                </h4>
+                <ul class="space-y-2 text-sm text-secondary">
+                    <li>LangChain</li>
+                    <li>Flux Dev</li>
+                    <li>Stable Diffusion</li>
+                    <li>LoRA Training</li>
+                    <li>Wan 2.2</li>
+                </ul>
+            </div>
+            
+            <!-- Automation -->
+            <div class="card p-6 reveal">
+                <h4 class="font-semibold mb-4 flex items-center gap-2">
+                    <span class="text-cyan">🔄</span> Automation
+                </h4>
+                <ul class="space-y-2 text-sm text-secondary">
+                    <li>n8n</li>
+                    <li>Custom Agents</li>
+                    <li>MCP Servers</li>
+                    <li>Retell AI</li>
+                    <li>Vapi</li>
+                </ul>
+            </div>
+            
+            <!-- Infrastructure -->
+            <div class="card p-6 reveal">
+                <h4 class="font-semibold mb-4 flex items-center gap-2">
+                    <span class="text-emerald">☁️</span> Infrastructure
+                </h4>
+                <ul class="space-y-2 text-sm text-secondary">
+                    <li>AWS/GCP</li>
+                    <li>Multi-GPU</li>
+                    <li>Self-Hosted LLMs</li>
+                    <li>Docker/K8s</li>
+                    <li>Edge Computing</li>
+                </ul>
+            </div>
+            
+            <!-- Analytics -->
+            <div class="card p-6 reveal">
+                <h4 class="font-semibold mb-4 flex items-center gap-2">
+                    <span class="text-accent">📊</span> Analytics
+                </h4>
+                <ul class="space-y-2 text-sm text-secondary">
+                    <li>GA4</li>
+                    <li>Meta CAPI</li>
+                    <li>Server-Side Tags</li>
+                    <li>Attribution</li>
+                    <li>CDP</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact CTA Section -->
+<section class="section" id="contact-cta" style="background: var(--gradient-hero);">
+    <div class="container">
+        <div class="max-w-3xl mx-auto text-center reveal">
+            <span class="badge mb-6">Ready?</span>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                Ready to <span class="gradient-text">Engineer Your Growth?</span>
+            </h2>
+            <p class="text-xl text-secondary mb-8">
+                The future belongs to organizations that treat AI not as a tool to be operated, but as infrastructure to be architected.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+                <a href="/contact" class="btn btn-primary btn-lg btn-arrow">
+                    Schedule Engineering Consultation
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+            <p class="text-secondary">
+                or email us: <a href="mailto:hello@duodriven.com" class="text-accent hover:text-cyan">hello@duodriven.com</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="section" id="contact" style="background: var(--color-bg-secondary);">
+    <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Form -->
+            <div class="reveal">
+                <span class="eyebrow text-accent">Get in Touch</span>
+                <h2 class="text-3xl font-bold mb-6">Let's Build Your <span class="gradient-text">Revenue System</span></h2>
+                <form id="contactForm" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="form-group">
+                            <label class="form-label" for="name">Name *</label>
+                            <input type="text" id="name" name="name" class="form-input" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email *</label>
+                            <input type="email" id="email" name="email" class="form-input" required placeholder="you@company.com">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="form-group">
+                            <label class="form-label" for="company">Company</label>
+                            <input type="text" id="company" name="company" class="form-input" placeholder="Company name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+1 (555) 000-0000">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="service">Service Interest</label>
+                        <select id="service" name="service_interest" class="form-input">
+                            <option value="">Select a service...</option>
+                            <option value="growth-infrastructure">Growth Infrastructure</option>
+                            <option value="autonomous-operations">Autonomous Operations</option>
+                            <option value="generative-creative">Generative Creative</option>
+                            <option value="aeo">Answer Engine Optimization</option>
+                            <option value="sovereign-ai">Sovereign AI Infrastructure</option>
+                            <option value="full-transformation">Full Transformation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="message">Message *</label>
+                        <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us about your growth challenges..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg w-full" id="contactSubmitBtn">
+                        <span>Send Message</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </form>
+                <div id="contactFormMessage" class="mt-4 hidden"></div>
+            </div>
+            
+            <!-- Info -->
+            <div class="reveal">
+                <div class="card p-8 h-full">
+                    <h3 class="text-2xl font-bold mb-6">Why Work With Us?</h3>
+                    <ul class="space-y-6">
+                        <li class="flex gap-4">
+                            <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-blue)" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Engineering-First Approach</h4>
+                                <p class="text-sm text-secondary">We build systems that compound, not campaigns that expire.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <div class="w-12 h-12 rounded-lg bg-purple/10 flex items-center justify-center flex-shrink-0">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-purple)" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Proprietary AI Infrastructure</h4>
+                                <p class="text-sm text-secondary">Custom-built agents and models, not off-the-shelf tools.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <div class="w-12 h-12 rounded-lg bg-emerald/10 flex items-center justify-center flex-shrink-0">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-emerald)" stroke-width="2">
+                                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Documented Financial Impact</h4>
+                                <p class="text-sm text-secondary">40-60% efficiency gains. 94% cost reductions. Real numbers.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <div class="w-12 h-12 rounded-lg bg-cyan/10 flex items-center justify-center flex-shrink-0">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-cyan)" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Embedded Partnership</h4>
+                                <p class="text-sm text-secondary">We function as your growth engineering team, not a vendor.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="divider-gradient my-8"></div>
+                    
+                    <div class="text-center">
+                        <p class="text-secondary mb-4">Prefer to chat?</p>
+                        <button onclick="toggleChat()" class="btn btn-secondary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            </svg>
+                            Talk to AI Agent
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
