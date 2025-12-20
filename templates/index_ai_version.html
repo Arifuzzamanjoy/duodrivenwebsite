@@ -1,0 +1,1106 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- ============================================
+     HERO SECTION - STATE OF THE ART
+     ============================================ -->
+<section class="hero-ultra" id="hero">
+    <!-- Advanced Background Effects -->
+    <div class="hero-bg-container">
+        <canvas id="particles-canvas" class="particle-canvas"></canvas>
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+        <div class="hero-grid-overlay"></div>
+        <div class="hero-noise"></div>
+        <div class="hero-gradient-overlay"></div>
+    </div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-card floating-card-1">
+            <div class="floating-icon">🤖</div>
+            <div class="floating-text">AI Agent Active</div>
+        </div>
+        <div class="floating-card floating-card-2">
+            <div class="floating-icon">📈</div>
+            <div class="floating-text">+340% ROI</div>
+        </div>
+        <div class="floating-card floating-card-3">
+            <div class="floating-icon">⚡</div>
+            <div class="floating-text">24/7 Running</div>
+        </div>
+    </div>
+    
+    <!-- Hero Content -->
+    <div class="hero-content">
+        <div class="container">
+            <div class="hero-inner">
+                <!-- Status Badge -->
+                <div class="hero-badge reveal">
+                    <div class="badge-glow"></div>
+                    <span class="badge-pulse"></span>
+                    <span class="badge-text">AI SYSTEMS ACTIVE</span>
+                    <span class="badge-divider">•</span>
+                    <span class="badge-subtext">ACCEPTING Q1 2026 PARTNERS</span>
+                </div>
+                
+                <!-- Main Headline -->
+                <h1 class="hero-title reveal">
+                    <span class="title-line">Your Growth.</span>
+                    <span class="title-line title-gradient">Engineered to Scale.</span>
+                    <span class="title-line title-sub">Forever.</span>
+                </h1>
+                
+                <!-- Value Proposition -->
+                <p class="hero-subtitle reveal">
+                    Stop paying agencies $50K/month for campaigns that expire tomorrow.
+                    <span class="subtitle-highlight">Build AI-powered revenue systems that compound 24/7</span>
+                    —and own every piece of infrastructure.
+                </p>
+                
+                <!-- Pain Points -->
+                <div class="hero-pain-points reveal">
+                    <div class="pain-item">
+                        <span class="pain-icon">😤</span>
+                        <span class="pain-text">Tired of burning budget on ads that die?</span>
+                    </div>
+                    <div class="pain-item">
+                        <span class="pain-icon">😩</span>
+                        <span class="pain-text">Creative team can't keep up with demand?</span>
+                    </div>
+                    <div class="pain-item">
+                        <span class="pain-icon">🤯</span>
+                        <span class="pain-text">Agencies billing hours, not delivering results?</span>
+                    </div>
+                </div>
+                
+                <!-- CTA Group -->
+                <div class="hero-cta-group reveal">
+                    <a href="/contact" class="hero-btn-primary">
+                        <span class="btn-bg"></span>
+                        <span class="btn-glow"></span>
+                        <span class="btn-content">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                            </svg>
+                            <span class="btn-text">Build My Revenue Engine</span>
+                            <span class="btn-arrow">→</span>
+                        </span>
+                    </a>
+                    <a href="#transformation" class="hero-btn-secondary">
+                        <span class="btn-content">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                            <span class="btn-text">See Transformations</span>
+                        </span>
+                    </a>
+                </div>
+                
+                <!-- Social Proof Row -->
+                <div class="hero-social-proof reveal">
+                    <div class="proof-avatars">
+                        <div class="avatar avatar-1">S</div>
+                        <div class="avatar avatar-2">M</div>
+                        <div class="avatar avatar-3">J</div>
+                        <div class="avatar avatar-4">A</div>
+                        <div class="avatar avatar-more">+47</div>
+                    </div>
+                    <div class="proof-text">
+                        <strong>50+ growth leaders</strong> saved <span class="highlight">$2.1M+ collectively</span>
+                    </div>
+                </div>
+                
+                <!-- Trust Badges -->
+                <div class="hero-trust-badges reveal">
+                    <div class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        <span>Enterprise Security</span>
+                    </div>
+                    <div class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Results in 30 Days</span>
+                    </div>
+                    <div class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        <span>4-Month ROI Guarantee</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Animated Stats Ticker -->
+    <div class="hero-ticker">
+        <div class="ticker-track">
+            <div class="ticker-content">
+                <div class="ticker-item"><span class="ticker-value">94%</span><span class="ticker-label">Cost Reduction</span></div>
+                <div class="ticker-dot">◆</div>
+                <div class="ticker-item"><span class="ticker-value">21x</span><span class="ticker-label">Faster Delivery</span></div>
+                <div class="ticker-dot">◆</div>
+                <div class="ticker-item"><span class="ticker-value">24/7</span><span class="ticker-label">AI Operations</span></div>
+                <div class="ticker-dot">◆</div>
+                <div class="ticker-item"><span class="ticker-value">$2.1M+</span><span class="ticker-label">Client Savings</span></div>
+                <div class="ticker-dot">◆</div>
+                <div class="ticker-item"><span class="ticker-value">50+</span><span class="ticker-label">Happy Partners</span></div>
+                <div class="ticker-dot">◆</div>
+                <div class="ticker-item"><span class="ticker-value">4mo</span><span class="ticker-label">ROI Breakeven</span></div>
+                <div class="ticker-dot">◆</div>
+            </div>
+            <div class="ticker-content">
+                <div class="ticker-item"><span class="ticker-value">94%</span><span class="ticker-label">Cost Reduction</span></div>
+                <div class="ticker-dot">◆</div>
+                <div class="ticker-item"><span class="ticker-value">21x</span><span class="ticker-label">Faster Delivery</span></div>
+                <div class="ticker-dot">◆</div>
+                <div class="ticker-item"><span class="ticker-value">24/7</span><span class="ticker-label">AI Operations</span></div>
+                <div class="ticker-dot">◆</div>
+                <div class="ticker-item"><span class="ticker-value">$2.1M+</span><span class="ticker-label">Client Savings</span></div>
+                <div class="ticker-dot">◆</div>
+                <div class="ticker-item"><span class="ticker-value">50+</span><span class="ticker-label">Happy Partners</span></div>
+                <div class="ticker-dot">◆</div>
+                <div class="ticker-item"><span class="ticker-value">4mo</span><span class="ticker-label">ROI Breakeven</span></div>
+                <div class="ticker-dot">◆</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+        </div>
+        <span class="scroll-text">Scroll to explore</span>
+    </div>
+</section>
+
+<!-- ============================================
+     TRANSFORMATION SECTION
+     ============================================ -->
+<section class="section-transformation" id="transformation">
+    <div class="container">
+        <div class="section-header-ultra reveal">
+            <span class="section-eyebrow">
+                <span class="eyebrow-icon">🔄</span>
+                THE TRANSFORMATION
+            </span>
+            <h2 class="section-title">
+                From <span class="title-old">Burning Budget</span> to 
+                <span class="title-new gradient-text">Building Assets</span>
+            </h2>
+            <p class="section-subtitle">
+                See why 60% of CMOs are shifting from agencies to AI-powered growth systems.
+            </p>
+        </div>
+        
+        <!-- Before/After Comparison -->
+        <div class="transformation-grid reveal">
+            <!-- Before Card -->
+            <div class="transform-card transform-before">
+                <div class="card-header">
+                    <div class="card-icon-wrapper card-icon-red">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="15" y1="9" x2="9" y2="15"></line>
+                            <line x1="9" y1="9" x2="15" y2="15"></line>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">The Old Way</h3>
+                    <span class="card-tag tag-red">Traditional Agencies</span>
+                </div>
+                <ul class="card-list">
+                    <li class="list-item-bad">
+                        <span class="item-icon">✗</span>
+                        <span class="item-text">$15K-50K/month retainers that vanish</span>
+                    </li>
+                    <li class="list-item-bad">
+                        <span class="item-icon">✗</span>
+                        <span class="item-text">Campaigns that die when budget stops</span>
+                    </li>
+                    <li class="list-item-bad">
+                        <span class="item-icon">✗</span>
+                        <span class="item-text">3-week turnaround for creative assets</span>
+                    </li>
+                    <li class="list-item-bad">
+                        <span class="item-icon">✗</span>
+                        <span class="item-text">Reports full of impressions, not revenue</span>
+                    </li>
+                    <li class="list-item-bad">
+                        <span class="item-icon">✗</span>
+                        <span class="item-text">Dependent on vendor for your growth</span>
+                    </li>
+                    <li class="list-item-bad">
+                        <span class="item-icon">✗</span>
+                        <span class="item-text">Can't scale without scaling cost</span>
+                    </li>
+                </ul>
+                <div class="card-stat">
+                    <span class="stat-label">Average Annual Cost</span>
+                    <span class="stat-value stat-bad">$180K - $600K</span>
+                </div>
+            </div>
+            
+            <!-- Arrow -->
+            <div class="transform-arrow">
+                <div class="arrow-line"></div>
+                <div class="arrow-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </div>
+                <div class="arrow-line"></div>
+            </div>
+            
+            <!-- After Card -->
+            <div class="transform-card transform-after">
+                <div class="card-glow"></div>
+                <div class="card-header">
+                    <div class="card-icon-wrapper card-icon-green">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">The DUODRIVEN Way</h3>
+                    <span class="card-tag tag-green">AI-Powered Systems</span>
+                </div>
+                <ul class="card-list">
+                    <li class="list-item-good">
+                        <span class="item-icon">✓</span>
+                        <span class="item-text">Own your infrastructure forever</span>
+                    </li>
+                    <li class="list-item-good">
+                        <span class="item-icon">✓</span>
+                        <span class="item-text">Systems that compound value 24/7</span>
+                    </li>
+                    <li class="list-item-good">
+                        <span class="item-icon">✓</span>
+                        <span class="item-text">2,000+ assets generated per month</span>
+                    </li>
+                    <li class="list-item-good">
+                        <span class="item-icon">✓</span>
+                        <span class="item-text">Real-time revenue attribution</span>
+                    </li>
+                    <li class="list-item-good">
+                        <span class="item-icon">✓</span>
+                        <span class="item-text">Zero vendor lock-in, 100% yours</span>
+                    </li>
+                    <li class="list-item-good">
+                        <span class="item-icon">✓</span>
+                        <span class="item-text">Scale infinitely at zero marginal cost</span>
+                    </li>
+                </ul>
+                <div class="card-stat">
+                    <span class="stat-label">Average Year 1 Investment</span>
+                    <span class="stat-value stat-good">$48K - $120K</span>
+                    <span class="stat-note">Then near-zero ongoing cost</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom CTA -->
+        <div class="transformation-cta reveal">
+            <p class="cta-text">Ready to stop renting and start building?</p>
+            <a href="/contact" class="btn-gradient">
+                Calculate My Savings
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     SERVICES SECTION - VISUAL CARDS
+     ============================================ -->
+<section class="section-services" id="services">
+    <div class="container">
+        <div class="section-header-ultra reveal">
+            <span class="section-eyebrow">
+                <span class="eyebrow-icon">⚡</span>
+                WHAT WE BUILD
+            </span>
+            <h2 class="section-title">
+                Three Engines. <span class="gradient-text">Infinite Scale.</span>
+            </h2>
+            <p class="section-subtitle">
+                We don't offer services. We build revenue-generating infrastructure you own forever.
+            </p>
+        </div>
+        
+        <!-- Services Grid -->
+        <div class="services-grid">
+            <!-- Service 1: Growth Infrastructure -->
+            <div class="service-card-ultra reveal" data-service="growth">
+                <div class="service-card-bg">
+                    <div class="service-orb service-orb-1"></div>
+                </div>
+                <div class="service-card-content">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">📊</div>
+                        <div class="service-icon-ring"></div>
+                    </div>
+                    <span class="service-tag">Engine A</span>
+                    <h3 class="service-title">Growth Infrastructure</h3>
+                    <p class="service-hook">Turn every marketing dollar into measurable revenue.</p>
+                    
+                    <div class="service-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">💰</span>
+                            <span class="benefit-text">CAC-optimized paid campaigns</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🎯</span>
+                            <span class="benefit-text">Conversion-focused UI/UX</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">📈</span>
+                            <span class="benefit-text">Full-funnel attribution</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🤝</span>
+                            <span class="benefit-text">Embedded growth partner</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-result">
+                        <span class="result-label">Typical Result:</span>
+                        <span class="result-value">40% Lower CAC</span>
+                    </div>
+                    
+                    <a href="#" class="service-link">
+                        <span>Explore Engine</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Service 2: Autonomous Operations -->
+            <div class="service-card-ultra service-card-featured reveal" data-service="autonomous">
+                <div class="service-card-bg">
+                    <div class="service-orb service-orb-2"></div>
+                </div>
+                <div class="service-featured-badge">Most Popular</div>
+                <div class="service-card-content">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">🤖</div>
+                        <div class="service-icon-ring"></div>
+                    </div>
+                    <span class="service-tag">Engine B</span>
+                    <h3 class="service-title">Autonomous Operations</h3>
+                    <p class="service-hook">AI employees that work 24/7 without coffee breaks.</p>
+                    
+                    <div class="service-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🎙️</span>
+                            <span class="benefit-text">Voice AI for 24/7 lead qualification</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🧠</span>
+                            <span class="benefit-text">Custom AI agents on your workflows</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">📋</span>
+                            <span class="benefit-text">AI project managers & analysts</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🔄</span>
+                            <span class="benefit-text">Fully autonomous execution</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-result">
+                        <span class="result-label">Typical Result:</span>
+                        <span class="result-value">90% Labor Savings</span>
+                    </div>
+                    
+                    <a href="#" class="service-link">
+                        <span>Explore Engine</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Service 3: Generative Creative -->
+            <div class="service-card-ultra reveal" data-service="creative">
+                <div class="service-card-bg">
+                    <div class="service-orb service-orb-3"></div>
+                </div>
+                <div class="service-card-content">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">🎨</div>
+                        <div class="service-icon-ring"></div>
+                    </div>
+                    <span class="service-tag">Engine C</span>
+                    <h3 class="service-title">Generative Creative</h3>
+                    <p class="service-hook">2,000+ branded assets monthly. Zero photoshoots.</p>
+                    
+                    <div class="service-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🖼️</span>
+                            <span class="benefit-text">AI trained on YOUR brand style</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🎬</span>
+                            <span class="benefit-text">Video production at 1/20th cost</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">♾️</span>
+                            <span class="benefit-text">Infinite A/B test variations</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🎯</span>
+                            <span class="benefit-text">Hyper-personalized ads at scale</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-result">
+                        <span class="result-label">Typical Result:</span>
+                        <span class="result-value">94% Cost Cut</span>
+                    </div>
+                    
+                    <a href="#" class="service-link">
+                        <span>Explore Engine</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bonus: Innovation Layer Preview -->
+        <div class="innovation-preview reveal">
+            <div class="innovation-bg"></div>
+            <div class="innovation-content">
+                <span class="innovation-label">🚀 CUTTING-EDGE CAPABILITIES</span>
+                <h3 class="innovation-title">Plus: Technologies Most Agencies Can't Offer</h3>
+                <div class="innovation-tags">
+                    <span class="innovation-tag">Answer Engine Optimization (AEO)</span>
+                    <span class="innovation-tag">Sovereign AI Infrastructure</span>
+                    <span class="innovation-tag">Hyper-Personalization at Scale</span>
+                    <span class="innovation-tag">Self-Hosted AI Models</span>
+                </div>
+                <a href="#innovation" class="innovation-link">
+                    Explore Innovation Layer
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <polyline points="19 12 12 19 5 12"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     CASE STUDIES - STORYTELLING FORMAT
+     ============================================ -->
+<section class="section-stories" id="case-studies">
+    <div class="container">
+        <div class="section-header-ultra reveal">
+            <span class="section-eyebrow">
+                <span class="eyebrow-icon">🏆</span>
+                SUCCESS STORIES
+            </span>
+            <h2 class="section-title">
+                Real People. Real Problems. <span class="gradient-text">Real Results.</span>
+            </h2>
+            <p class="section-subtitle">
+                These aren't case studies—they're transformation stories from growth leaders just like you.
+            </p>
+        </div>
+        
+        <!-- Story 1 -->
+        <div class="story-card reveal">
+            <div class="story-visual">
+                <div class="visual-before-after">
+                    <div class="visual-before">
+                        <span class="visual-label">Before</span>
+                        <div class="visual-number">$40K</div>
+                        <span class="visual-unit">/month</span>
+                    </div>
+                    <div class="visual-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                    <div class="visual-after">
+                        <span class="visual-label">After</span>
+                        <div class="visual-number">$2.4K</div>
+                        <span class="visual-unit">/month</span>
+                    </div>
+                </div>
+                <div class="visual-badge">94% SAVED</div>
+            </div>
+            
+            <div class="story-content">
+                <div class="story-header">
+                    <span class="story-category">E-Commerce Brand</span>
+                    <span class="story-type">Image Generation Engine</span>
+                </div>
+                
+                <h3 class="story-title">"We went from 3-week waits to 24-hour turnaround—and 4x'd our output."</h3>
+                
+                <div class="story-narrative">
+                    <div class="narrative-block">
+                        <span class="narrative-emoji">😩</span>
+                        <div class="narrative-content">
+                            <strong>The Problem:</strong> Sarah needed 500+ product lifestyle images monthly. Studio costs: $40K. Turnaround: 3 agonizing weeks. Her creative team was burned out, and competitors were moving faster.
+                        </div>
+                    </div>
+                    
+                    <div class="narrative-block">
+                        <span class="narrative-emoji">💡</span>
+                        <div class="narrative-content">
+                            <strong>Our Solution:</strong> We built her a custom AI image generation system trained on 500 of her best brand images. The AI learned her brand's visual DNA and now produces pixel-perfect lifestyle shots on demand.
+                        </div>
+                    </div>
+                    
+                    <div class="narrative-block">
+                        <span class="narrative-emoji">🚀</span>
+                        <div class="narrative-content">
+                            <strong>The Result:</strong> Her team went from overwhelmed to unstoppable. They now A/B test 50+ creative variations per campaign instead of settling for the 3 they could afford before.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-metrics">
+                    <div class="metric">
+                        <span class="metric-value">94%</span>
+                        <span class="metric-label">Cost Reduction</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">21x</span>
+                        <span class="metric-label">Faster Delivery</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">4x</span>
+                        <span class="metric-label">More Output</span>
+                    </div>
+                    <div class="metric metric-highlight">
+                        <span class="metric-value">$451K</span>
+                        <span class="metric-label">Saved Year 1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Story 2 -->
+        <div class="story-card story-card-alt reveal">
+            <div class="story-visual">
+                <div class="visual-before-after">
+                    <div class="visual-before">
+                        <span class="visual-label">Before</span>
+                        <div class="visual-number">4 hrs</div>
+                        <span class="visual-unit">response</span>
+                    </div>
+                    <div class="visual-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                    <div class="visual-after">
+                        <span class="visual-label">After</span>
+                        <div class="visual-number">90 sec</div>
+                        <span class="visual-unit">response</span>
+                    </div>
+                </div>
+                <div class="visual-badge">160x FASTER</div>
+            </div>
+            
+            <div class="story-content">
+                <div class="story-header">
+                    <span class="story-category">B2B SaaS</span>
+                    <span class="story-type">Voice AI Agent</span>
+                </div>
+                
+                <h3 class="story-title">"Our AI handles 1,000+ calls weekly. It never gets tired, never misses a lead."</h3>
+                
+                <div class="story-narrative">
+                    <div class="narrative-block">
+                        <span class="narrative-emoji">😩</span>
+                        <div class="narrative-content">
+                            <strong>The Problem:</strong> Marcus's SDR team cost $180K/year, but 70% of their calls were spent on leads that would never convert. Response times averaged 4 hours—by which time, hot leads had gone cold.
+                        </div>
+                    </div>
+                    
+                    <div class="narrative-block">
+                        <span class="narrative-emoji">💡</span>
+                        <div class="narrative-content">
+                            <strong>Our Solution:</strong> We deployed an AI voice agent that sounds indistinguishable from a human. It qualifies leads using the exact decision trees of his top-performing reps and hands off only the hottest prospects.
+                        </div>
+                    </div>
+                    
+                    <div class="narrative-block">
+                        <span class="narrative-emoji">🚀</span>
+                        <div class="narrative-content">
+                            <strong>The Result:</strong> His sales team now focuses exclusively on high-intent conversations. Close rates went up. Burnout went down. And the AI works nights, weekends, and holidays.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-metrics">
+                    <div class="metric">
+                        <span class="metric-value">90%</span>
+                        <span class="metric-label">Labor Savings</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">24/7</span>
+                        <span class="metric-label">Coverage</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">160x</span>
+                        <span class="metric-label">Faster Response</span>
+                    </div>
+                    <div class="metric metric-highlight">
+                        <span class="metric-value">$162K</span>
+                        <span class="metric-label">Saved Year 1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Story 3 -->
+        <div class="story-card reveal">
+            <div class="story-visual">
+                <div class="visual-before-after">
+                    <div class="visual-before">
+                        <span class="visual-label">Before</span>
+                        <div class="visual-number">$15</div>
+                        <span class="visual-unit">/video</span>
+                    </div>
+                    <div class="visual-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                    <div class="visual-after">
+                        <span class="visual-label">After</span>
+                        <div class="visual-number">$0.40</div>
+                        <span class="visual-unit">/video</span>
+                    </div>
+                </div>
+                <div class="visual-badge">97% SAVED</div>
+            </div>
+            
+            <div class="story-content">
+                <div class="story-header">
+                    <span class="story-category">Media Company</span>
+                    <span class="story-type">Video Generation Engine</span>
+                </div>
+                
+                <h3 class="story-title">"We produce 400+ videos daily now. Our competitors can't figure out how."</h3>
+                
+                <div class="story-narrative">
+                    <div class="narrative-block">
+                        <span class="narrative-emoji">😩</span>
+                        <div class="narrative-content">
+                            <strong>The Problem:</strong> Jennifer needed 100+ short-form videos monthly. External API costs: $15/video. Rate limits capped at 50/day. And NDA restrictions meant they couldn't share client data with third-party services.
+                        </div>
+                    </div>
+                    
+                    <div class="narrative-block">
+                        <span class="narrative-emoji">💡</span>
+                        <div class="narrative-content">
+                            <strong>Our Solution:</strong> We built a self-hosted video generation system on their infrastructure. Multi-GPU setup, parallel processing, content calendar integration. 100% data sovereignty—nothing leaves their servers.
+                        </div>
+                    </div>
+                    
+                    <div class="narrative-block">
+                        <span class="narrative-emoji">🚀</span>
+                        <div class="narrative-content">
+                            <strong>The Result:</strong> They went from bottleneck to content machine. Now they test dozens of video variations, dominate algorithm feeds, and serve enterprise clients with strict security requirements.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-metrics">
+                    <div class="metric">
+                        <span class="metric-value">97%</span>
+                        <span class="metric-label">Cost Reduction</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">8x</span>
+                        <span class="metric-label">More Capacity</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">100%</span>
+                        <span class="metric-label">Data Sovereignty</span>
+                    </div>
+                    <div class="metric metric-highlight">
+                        <span class="metric-value">4mo</span>
+                        <span class="metric-label">ROI Breakeven</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA After Stories -->
+        <div class="stories-cta reveal">
+            <div class="cta-content">
+                <h3>Want results like these?</h3>
+                <p>Book a free strategy call. We'll show you exactly what's possible for your business.</p>
+            </div>
+            <a href="/contact" class="btn-gradient btn-lg">
+                Book Strategy Call
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     INNOVATION LAYER
+     ============================================ -->
+<section class="section-innovation" id="innovation">
+    <div class="container">
+        <div class="section-header-ultra reveal">
+            <span class="section-eyebrow">
+                <span class="eyebrow-icon">🔬</span>
+                INNOVATION LAYER
+            </span>
+            <h2 class="section-title">
+                Capabilities Your Competitors <span class="gradient-text">Can't Match</span>
+            </h2>
+            <p class="section-subtitle">
+                Cutting-edge technologies that require technical infrastructure most agencies simply don't have.
+            </p>
+        </div>
+        
+        <!-- Innovation Cards -->
+        <div class="innovation-grid">
+            <!-- AEO Card -->
+            <div class="innovation-card reveal">
+                <div class="inno-card-bg"></div>
+                <div class="inno-card-content">
+                    <div class="inno-icon">🔍</div>
+                    <h3 class="inno-title">Answer Engine Optimization</h3>
+                    <p class="inno-desc">60% of searches end without a click. We ensure your brand IS the answer that AI delivers.</p>
+                    <div class="inno-features">
+                        <span class="inno-feature">ChatGPT Citation Architecture</span>
+                        <span class="inno-feature">AI Crawler Whitelisting</span>
+                        <span class="inno-feature">Zero-Click Funnel Design</span>
+                    </div>
+                    <div class="inno-stat">
+                        <span class="inno-stat-value">6-10x</span>
+                        <span class="inno-stat-label">Better CTR</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sovereign AI Card -->
+            <div class="innovation-card reveal">
+                <div class="inno-card-bg"></div>
+                <div class="inno-card-content">
+                    <div class="inno-icon">🔒</div>
+                    <h3 class="inno-title">Sovereign AI Infrastructure</h3>
+                    <p class="inno-desc">Your data never leaves your infrastructure. GDPR, HIPAA, EU AI Act compliant by design.</p>
+                    <div class="inno-features">
+                        <span class="inno-feature">Self-Hosted LLMs</span>
+                        <span class="inno-feature">On-Premise Generation</span>
+                        <span class="inno-feature">Zero Vendor Lock-in</span>
+                    </div>
+                    <div class="inno-stat">
+                        <span class="inno-stat-value">100%</span>
+                        <span class="inno-stat-label">Data Sovereignty</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hyper-Personalization Card -->
+            <div class="innovation-card reveal">
+                <div class="inno-card-bg"></div>
+                <div class="inno-card-content">
+                    <div class="inno-icon">🎯</div>
+                    <h3 class="inno-title">Hyper-Personalization</h3>
+                    <p class="inno-desc">10,000 unique ads for 10,000 unique leads. Every message calibrated to individual profiles.</p>
+                    <div class="inno-features">
+                        <span class="inno-feature">Dynamic Asset Generation</span>
+                        <span class="inno-feature">Real-time Personalization</span>
+                        <span class="inno-feature">1:1 Scale Marketing</span>
+                    </div>
+                    <div class="inno-stat">
+                        <span class="inno-stat-value">20%</span>
+                        <span class="inno-stat-label">Sales Increase (BCG)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Agentic AI Card -->
+            <div class="innovation-card reveal">
+                <div class="inno-card-bg"></div>
+                <div class="inno-card-content">
+                    <div class="inno-icon">🤖</div>
+                    <h3 class="inno-title">Agentic AI Workflows</h3>
+                    <p class="inno-desc">Multi-agent ecosystems where AI systems collaborate: Sales, Finance, Ops—all automated.</p>
+                    <div class="inno-features">
+                        <span class="inno-feature">AI Project Managers</span>
+                        <span class="inno-feature">Autonomous Research</span>
+                        <span class="inno-feature">Cross-Department Coordination</span>
+                    </div>
+                    <div class="inno-stat">
+                        <span class="inno-stat-value">40-60%</span>
+                        <span class="inno-stat-label">Efficiency Gains</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     TECHNOLOGY STACK
+     ============================================ -->
+<section class="section-tech" id="technology">
+    <div class="container">
+        <div class="section-header-ultra reveal">
+            <span class="section-eyebrow">
+                <span class="eyebrow-icon">⚙️</span>
+                ENGINEERING STACK
+            </span>
+            <h2 class="section-title">
+                Built on <span class="gradient-text">Battle-Tested</span> Technologies
+            </h2>
+            <p class="section-subtitle">
+                No black boxes. No vendor lock-in. Infrastructure you can audit, understand, and own.
+            </p>
+        </div>
+        
+        <!-- Tech Grid -->
+        <div class="tech-grid reveal">
+            <div class="tech-category">
+                <div class="tech-category-header">
+                    <span class="tech-icon">⚡</span>
+                    <h4>AI / ML</h4>
+                </div>
+                <div class="tech-items">
+                    <span class="tech-item">LangChain</span>
+                    <span class="tech-item">Flux Dev</span>
+                    <span class="tech-item">Stable Diffusion</span>
+                    <span class="tech-item">LoRA Training</span>
+                    <span class="tech-item">Wan 2.2</span>
+                </div>
+            </div>
+            
+            <div class="tech-category">
+                <div class="tech-category-header">
+                    <span class="tech-icon">🔄</span>
+                    <h4>Automation</h4>
+                </div>
+                <div class="tech-items">
+                    <span class="tech-item">n8n</span>
+                    <span class="tech-item">Custom Agents</span>
+                    <span class="tech-item">MCP Servers</span>
+                    <span class="tech-item">Retell AI</span>
+                    <span class="tech-item">Vapi</span>
+                </div>
+            </div>
+            
+            <div class="tech-category">
+                <div class="tech-category-header">
+                    <span class="tech-icon">☁️</span>
+                    <h4>Infrastructure</h4>
+                </div>
+                <div class="tech-items">
+                    <span class="tech-item">AWS / GCP</span>
+                    <span class="tech-item">Multi-GPU</span>
+                    <span class="tech-item">Self-Hosted LLMs</span>
+                    <span class="tech-item">Docker / K8s</span>
+                    <span class="tech-item">Edge Computing</span>
+                </div>
+            </div>
+            
+            <div class="tech-category">
+                <div class="tech-category-header">
+                    <span class="tech-icon">📊</span>
+                    <h4>Analytics</h4>
+                </div>
+                <div class="tech-items">
+                    <span class="tech-item">GA4</span>
+                    <span class="tech-item">Meta CAPI</span>
+                    <span class="tech-item">Server-Side Tags</span>
+                    <span class="tech-item">Attribution</span>
+                    <span class="tech-item">CDP</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     FINAL CTA SECTION
+     ============================================ -->
+<section class="section-final-cta" id="cta">
+    <div class="cta-bg-effects">
+        <div class="cta-orb cta-orb-1"></div>
+        <div class="cta-orb cta-orb-2"></div>
+        <div class="cta-grid-overlay"></div>
+    </div>
+    
+    <div class="container">
+        <div class="final-cta-content reveal">
+            <span class="cta-eyebrow">READY TO TRANSFORM?</span>
+            <h2 class="cta-headline">
+                Stop Renting Your Growth.<br>
+                <span class="gradient-text">Start Building Revenue Systems.</span>
+            </h2>
+            <p class="cta-subtext">
+                The future belongs to companies that build, not buy. While competitors keep burning money on agencies,
+                you'll have AI-powered infrastructure that compounds returns forever.
+            </p>
+            
+            <div class="cta-benefits">
+                <div class="cta-benefit">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Free strategy consultation</span>
+                </div>
+                <div class="cta-benefit">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>ROI projection for your business</span>
+                </div>
+                <div class="cta-benefit">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Custom system architecture plan</span>
+                </div>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="/contact" class="btn-cta-primary">
+                    <span class="btn-bg"></span>
+                    <span class="btn-content">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                        Book Strategy Call
+                    </span>
+                </a>
+                <a href="mailto:hello@duodriven.com" class="btn-cta-secondary">
+                    Or email: hello@duodriven.com
+                </a>
+            </div>
+            
+            <div class="cta-trust">
+                <span>🔒 No obligations</span>
+                <span>•</span>
+                <span>📅 30-min call</span>
+                <span>•</span>
+                <span>💡 Actionable insights guaranteed</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     CONTACT FORM SECTION
+     ============================================ -->
+<section class="section-contact" id="contact">
+    <div class="container">
+        <div class="contact-grid">
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper reveal">
+                <h3 class="form-title">Let's Build Your Revenue System</h3>
+                <form class="contact-form" action="/api/contact" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="John Smith">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="john@company.com">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" placeholder="Your Company">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Interest</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service...</option>
+                            <option value="growth">Growth Infrastructure</option>
+                            <option value="autonomous">Autonomous Operations</option>
+                            <option value="creative">Generative Creative</option>
+                            <option value="aeo">Answer Engine Optimization</option>
+                            <option value="full">Full-Stack Solution</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="4" required placeholder="Tell us about your growth challenges..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <span>Send Message</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="contact-info reveal">
+                <h3 class="info-title">Why Partner With Us?</h3>
+                
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="info-icon">⚡</div>
+                        <h4>Engineering-First</h4>
+                        <p>We build systems that compound, not campaigns that expire.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🤖</div>
+                        <h4>AI-Native</h4>
+                        <p>Custom agents and models, not off-the-shelf tools.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📊</div>
+                        <h4>Results-Obsessed</h4>
+                        <p>40-60% efficiency gains. 94% cost reductions. Real numbers.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🤝</div>
+                        <h4>True Partnership</h4>
+                        <p>We function as your growth team, not a vendor.</p>
+                    </div>
+                </div>
+                
+                <div class="contact-direct">
+                    <p class="direct-label">Prefer to reach out directly?</p>
+                    <a href="mailto:hello@duodriven.com" class="direct-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        hello@duodriven.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
