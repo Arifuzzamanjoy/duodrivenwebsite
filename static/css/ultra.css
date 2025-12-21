@@ -4584,7 +4584,7 @@
 
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
 }
 
@@ -4606,6 +4606,8 @@
     border-radius: 20px;
     padding: 28px;
     transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .tech-card:hover {
@@ -4616,7 +4618,6 @@
 .tech-card.featured {
     background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
     border-color: rgba(6, 182, 212, 0.2);
-    grid-column: span 2;
 }
 
 @media (max-width: 640px) {
@@ -4627,27 +4628,42 @@
 
 .tech-card-header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 16px;
     margin-bottom: 16px;
 }
 
 .tech-icon {
-    font-size: 2rem;
+    font-size: 2.5rem;
     flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(6, 182, 212, 0.1);
+    border-radius: 12px;
+}
+
+.tech-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .tech-info h4 {
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--color-text-primary);
-    margin-bottom: 4px;
+    margin: 0;
+    line-height: 1.3;
 }
 
 .tech-category {
     font-size: 0.8rem;
     color: var(--color-accent-cyan);
     font-weight: 500;
+    display: inline-block;
 }
 
 .tech-desc {
@@ -4655,12 +4671,14 @@
     color: var(--color-text-secondary);
     line-height: 1.6;
     margin-bottom: 20px;
+    flex-grow: 1;
 }
 
 .tech-tools {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-top: auto;
 }
 
 .tech-tools .tool {
