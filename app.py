@@ -79,23 +79,28 @@ def create_app(config_name='default'):
             response = requests.post(
                 webhook_url,
                 json={
-                    'message': data.get('message', ''),
-                    'session_id': data.get('session_id', str(uuid.uuid4())),
-                    'page_url': data.get('page_url', ''),
-                    'timestamp': data.get('timestamp', datetime.utcnow().isoformat()),
-                    'user_agent': data.get('user_agent', '')
+                    'chatInput': data.get('message', ''),
+                    'sessionId': data.get('session_id', str(uuid.uuid4()))
                 },
-                timeout=30,
+                timeout=60,
                 headers={'Content-Type': 'application/json'}
             )
+            
+            # Log response for debugging
+            print(f"Webhook Status: {response.status_code}")
+            print(f"Webhook Response: {response.text[:500] if response.text else 'Empty'}")
             
             # Try to parse JSON response
             try:
                 result = response.json()
+                # Handle array response (n8n sometimes returns array)
+                if isinstance(result, list) and len(result) > 0:
+                    result = result[0]
                 return jsonify(result)
-            except:
+            except Exception as e:
+                print(f"JSON Parse Error: {e}")
                 # If response isn't JSON, wrap it
-                return jsonify({'reply': response.text})
+                return jsonify({'response': response.text})
                 
         except requests.exceptions.Timeout:
             return jsonify({

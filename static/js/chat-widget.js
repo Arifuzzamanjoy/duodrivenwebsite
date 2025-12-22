@@ -6,7 +6,7 @@
 class ChatWidget {
     constructor() {
         this.widget = document.getElementById('chatWidget');
-        this.toggle = document.getElementById('chatToggle');
+        this.toggleBtn = document.getElementById('chatToggle');
         this.messages = document.getElementById('chatMessages');
         this.input = document.getElementById('chatInput');
         this.form = document.getElementById('chatForm');
@@ -22,7 +22,7 @@ class ChatWidget {
     }
     
     init() {
-        if (!this.widget || !this.toggle) return;
+        if (!this.widget || !this.toggleBtn) return;
         
         // Load existing chat history
         this.renderChatHistory();
@@ -100,7 +100,7 @@ class ChatWidget {
     open() {
         this.isOpen = true;
         this.widget.classList.add('active');
-        this.toggle.classList.add('active');
+        this.toggleBtn.classList.add('active');
         
         // Focus input
         setTimeout(() => {
@@ -108,14 +108,14 @@ class ChatWidget {
         }, 300);
         
         // Mark notification as read
-        const dot = this.toggle.querySelector('.notification-dot');
+        const dot = this.toggleBtn.querySelector('.notification-dot');
         if (dot) dot.style.display = 'none';
     }
     
     close() {
         this.isOpen = false;
         this.widget.classList.remove('active');
-        this.toggle.classList.remove('active');
+        this.toggleBtn.classList.remove('active');
     }
     
     minimize() {
@@ -276,7 +276,7 @@ class ChatWidget {
             this.removeTypingIndicator();
             
             // Add bot response
-            const botResponse = data.reply || data.output || data.message || "I'm sorry, I couldn't process that request. Please try again or email us at hello@duodriven.com";
+            const botResponse = data.response || data.reply || data.output || data.message || "I'm sorry, I couldn't process that request. Please try again or email us at hello@duodriven.com";
             this.appendMessage(botResponse, 'bot');
             
         } catch (error) {
@@ -368,6 +368,20 @@ function sendQuickMessage(message) {
     chatWidget.sendMessage(message);
 }
 
+function newChatSession() {
+    if (!chatWidget) {
+        chatWidget = new ChatWidget();
+    }
+    
+    // Generate new session ID
+    const newSessionId = 'chat_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    localStorage.setItem('duodriven_chat_session', newSessionId);
+    chatWidget.sessionId = newSessionId;
+    
+    // Clear chat history
+    chatWidget.clearHistory();
+}
+
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
     chatWidget = new ChatWidget();
@@ -380,3 +394,4 @@ window.minimizeChat = minimizeChat;
 window.handleChatSubmit = handleChatSubmit;
 window.handleInputKeydown = handleInputKeydown;
 window.sendQuickMessage = sendQuickMessage;
+window.newChatSession = newChatSession;
