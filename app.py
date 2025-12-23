@@ -56,6 +56,11 @@ def create_app(config_name='default'):
         """Contact page"""
         return render_template('contact.html')
     
+    @app.route('/pricing')
+    def pricing():
+        """Pricing page"""
+        return render_template('pricing.html')
+    
     # ============================================
     # API ENDPOINTS
     # ============================================

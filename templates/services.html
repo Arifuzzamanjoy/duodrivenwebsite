@@ -34,24 +34,182 @@
             <!-- Main Headline -->
             <h1 class="services-title reveal">
                 <span class="title-line">Drive Growth with</span>
-                <span class="title-line title-gradient">Results-Driven Marketing</span>
+                <span class="title-line title-gradient">Results-Driven Solutions</span>
             </h1>
             
             <!-- Description -->
             <p class="services-subtitle reveal">
-                From social media to paid ads, web design to email campaigns—we deliver 
-                <span class="highlight">comprehensive digital marketing solutions</span> that convert.
+                From digital marketing to automation to AI engineering—we deliver 
+                <span class="highlight">comprehensive growth solutions</span> tailored to your business stage.
             </p>
+            
+            <!-- Service Pillars Navigation -->
+            <div class="services-pillars reveal">
+                <a href="#digital-marketing" class="pillar-nav">
+                    <span class="pillar-icon">📱</span>
+                    <span class="pillar-text">Digital Marketing</span>
+                </a>
+                <a href="#automation" class="pillar-nav">
+                    <span class="pillar-icon">⚡</span>
+                    <span class="pillar-text">Automation</span>
+                </a>
+                <a href="#ai-engineering" class="pillar-nav">
+                    <span class="pillar-icon">🤖</span>
+                    <span class="pillar-text">AI Engineering</span>
+                </a>
+            </div>
         </div>
     </div>
 </section>
 
+<style>
+/* Service Pillars Navigation */
+.services-pillars {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+
+.pillar-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.pillar-nav:hover {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: var(--primary);
+    color: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.pillar-icon {
+    font-size: 1.1rem;
+}
+
+/* Automation Section Background */
+.services-automation {
+    position: relative;
+    background: linear-gradient(180deg, rgba(99, 102, 241, 0.02) 0%, rgba(99, 102, 241, 0.05) 100%);
+}
+
+.automation-section-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.automation-section-bg .automation-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+}
+
+.automation-section-bg .automation-orb-1 {
+    width: 500px;
+    height: 500px;
+    background: rgba(99, 102, 241, 0.08);
+    top: -100px;
+    right: -100px;
+}
+
+.automation-section-bg .automation-orb-2 {
+    width: 400px;
+    height: 400px;
+    background: rgba(168, 85, 247, 0.06);
+    bottom: -100px;
+    left: -100px;
+}
+
+/* AI Section Background */
+.services-ai {
+    position: relative;
+    background: linear-gradient(180deg, rgba(168, 85, 247, 0.02) 0%, rgba(168, 85, 247, 0.05) 100%);
+}
+
+.ai-section-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.ai-section-bg .ai-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+}
+
+.ai-section-bg .ai-orb-1 {
+    width: 500px;
+    height: 500px;
+    background: rgba(168, 85, 247, 0.08);
+    top: -100px;
+    left: -100px;
+}
+
+.ai-section-bg .ai-orb-2 {
+    width: 400px;
+    height: 400px;
+    background: rgba(236, 72, 153, 0.06);
+    bottom: -100px;
+    right: -100px;
+}
+
+/* Visual card variations */
+.visual-card.automation {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0.05) 100%);
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+.visual-card.leads,
+.visual-card.emailauto,
+.visual-card.chatbot {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.05) 100%);
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+.visual-card.ai-agent,
+.visual-card.voice-ai,
+.visual-card.generative,
+.visual-card.aeo,
+.visual-card.sovereign {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(236, 72, 153, 0.05) 100%);
+    border-color: rgba(168, 85, 247, 0.2);
+}
+</style>
+
 <!-- ============================================
-     SERVICES OVERVIEW
+     SERVICES OVERVIEW - DIGITAL MARKETING
      ============================================ -->
-<section class="services-overview section-padding">
+<section class="services-overview section-padding" id="digital-marketing">
     <div class="container">
         
+        <div class="section-header reveal">
+            <span class="section-eyebrow">
+                <span class="eyebrow-icon">📱</span>
+                PILLAR 1
+            </span>
+            <h2 class="section-title">
+                Digital Marketing<br>
+                <span class="gradient-text">Services</span>
+            </h2>
+            <p class="section-subtitle">
+                Full-service digital marketing for businesses who want results without complexity.
+            </p>
+        </div>
+
         <!-- Service 01: Social Media Marketing -->
         <div class="service-block reveal" id="social-media-marketing">
             <div class="service-block-header">
@@ -620,125 +778,1044 @@
 </section>
 
 <!-- ============================================
-     PRICING / PACKAGES
+     PILLAR 2: AUTOMATION & GROWTH TOOLS
      ============================================ -->
-<section class="services-pricing section-padding">
+<section class="services-automation section-padding" id="automation">
+    <div class="automation-section-bg">
+        <div class="automation-orb automation-orb-1"></div>
+        <div class="automation-orb automation-orb-2"></div>
+    </div>
+    
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">
+                <span class="eyebrow-icon">⚡</span>
+                PILLAR 2
+            </span>
+            <h2 class="section-title">
+                Automation &<br>
+                <span class="gradient-text">Growth Tools</span>
+            </h2>
+            <p class="section-subtitle">
+                Proven automation systems that save time, reduce costs, and scale your marketing operations 24/7.
+            </p>
+        </div>
+
+        <!-- Automation Service 07: Social Media Automation -->
+        <div class="service-block reveal" id="social-automation">
+            <div class="service-block-header">
+                <div class="service-number">07</div>
+                <div class="service-meta">
+                    <span class="service-label">TIME SAVINGS</span>
+                    <h2 class="service-title">Social Media Automation</h2>
+                    <p class="service-tagline">Post Consistently. Save 10+ Hours Weekly.</p>
+                </div>
+            </div>
+            
+            <div class="service-block-content">
+                <div class="service-description">
+                    <p class="service-intro">
+                        Stop spending hours manually posting content. Our <strong>social media automation systems</strong> 
+                        schedule posts, auto-publish, and manage multiple accounts from one dashboard—so you can focus on strategy.
+                    </p>
+                    
+                    <div class="service-benefits">
+                        <h4>What's Included</h4>
+                        <ul>
+                            <li>
+                                <span class="benefit-icon">📅</span>
+                                <div>
+                                    <strong>Auto-Posting to All Platforms</strong>
+                                    <p>Schedule and publish to Facebook, Instagram, LinkedIn, Twitter, and TikTok automatically</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">📊</span>
+                                <div>
+                                    <strong>Content Queue & Scheduling</strong>
+                                    <p>Build weeks of content in advance with intelligent scheduling</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">⏰</span>
+                                <div>
+                                    <strong>Best Time to Post Analytics</strong>
+                                    <p>AI-powered timing optimization for maximum engagement</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">#️⃣</span>
+                                <div>
+                                    <strong>Hashtag Research & Optimization</strong>
+                                    <p>Automated hashtag suggestions based on trending topics and performance</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card-visual">
+                    <div class="visual-card automation">
+                        <div class="visual-header">
+                            <span class="visual-icon">⚡</span>
+                            <span class="visual-label">Automation</span>
+                        </div>
+                        <div class="visual-metrics">
+                            <div class="metric">
+                                <span class="metric-value">10+</span>
+                                <span class="metric-label">Hours Saved</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">5+</span>
+                                <span class="metric-label">Platforms</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">24/7</span>
+                                <span class="metric-label">Publishing</span>
+                            </div>
+                        </div>
+                        <div class="visual-footer">
+                            <span class="tag">Scheduling</span>
+                            <span class="tag">Analytics</span>
+                            <span class="tag">Auto-Post</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-cta">
+                <a href="/contact?service=social-automation" class="hero-btn-primary">
+                    <span class="btn-bg"></span>
+                    <span class="btn-content">
+                        <span class="btn-text">Automate My Social Media</span>
+                        <span class="btn-arrow">→</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Automation Service 08: Lead Capture -->
+        <div class="service-block reveal" id="lead-automation">
+            <div class="service-block-header">
+                <div class="service-number">08</div>
+                <div class="service-meta">
+                    <span class="service-label">LEAD GENERATION</span>
+                    <h2 class="service-title">Lead Capture Automation</h2>
+                    <p class="service-tagline">Capture & Qualify Leads Automatically.</p>
+                </div>
+            </div>
+            
+            <div class="service-block-content">
+                <div class="service-description">
+                    <p class="service-intro">
+                        Never miss a lead again. Our <strong>lead capture automation</strong> captures, qualifies, 
+                        and routes leads to your CRM or sales team automatically—turning website visitors into qualified opportunities.
+                    </p>
+                    
+                    <div class="service-benefits">
+                        <h4>What's Included</h4>
+                        <ul>
+                            <li>
+                                <span class="benefit-icon">📄</span>
+                                <div>
+                                    <strong>Landing Page Builders</strong>
+                                    <p>High-converting landing pages optimized for lead capture</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">🏷️</span>
+                                <div>
+                                    <strong>Form Automation & Tagging</strong>
+                                    <p>Smart forms that automatically tag and segment leads</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">⭐</span>
+                                <div>
+                                    <strong>Lead Scoring Systems</strong>
+                                    <p>Automatically score leads based on behavior and demographics</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">🔄</span>
+                                <div>
+                                    <strong>CRM Integration</strong>
+                                    <p>Seamless sync with HubSpot, Salesforce, Pipedrive, and more</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card-visual">
+                    <div class="visual-card leads">
+                        <div class="visual-header">
+                            <span class="visual-icon">🎯</span>
+                            <span class="visual-label">Lead Capture</span>
+                        </div>
+                        <div class="visual-metrics">
+                            <div class="metric">
+                                <span class="metric-value">3x</span>
+                                <span class="metric-label">More Leads</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Auto</span>
+                                <span class="metric-label">Qualification</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">CRM</span>
+                                <span class="metric-label">Integrated</span>
+                            </div>
+                        </div>
+                        <div class="visual-footer">
+                            <span class="tag">Forms</span>
+                            <span class="tag">Scoring</span>
+                            <span class="tag">Routing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-cta">
+                <a href="/contact?service=lead-automation" class="hero-btn-primary">
+                    <span class="btn-bg"></span>
+                    <span class="btn-content">
+                        <span class="btn-text">Automate Lead Capture</span>
+                        <span class="btn-arrow">→</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Automation Service 09: Email Sequences -->
+        <div class="service-block reveal" id="email-automation">
+            <div class="service-block-header">
+                <div class="service-number">09</div>
+                <div class="service-meta">
+                    <span class="service-label">NURTURE ON AUTOPILOT</span>
+                    <h2 class="service-title">Email Sequence Automation</h2>
+                    <p class="service-tagline">Convert Leads While You Sleep.</p>
+                </div>
+            </div>
+            
+            <div class="service-block-content">
+                <div class="service-description">
+                    <p class="service-intro">
+                        Automated drip campaigns that <strong>nurture leads 24/7</strong>. Welcome sequences, 
+                        abandoned cart recovery, re-engagement campaigns—all running automatically to maximize conversions.
+                    </p>
+                    
+                    <div class="service-benefits">
+                        <h4>What's Included</h4>
+                        <ul>
+                            <li>
+                                <span class="benefit-icon">👋</span>
+                                <div>
+                                    <strong>Welcome Sequences</strong>
+                                    <p>Onboard new subscribers with engaging automated series</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">🛒</span>
+                                <div>
+                                    <strong>Abandoned Cart Recovery</strong>
+                                    <p>Recover lost sales with timely follow-up emails</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">🔔</span>
+                                <div>
+                                    <strong>Re-engagement Campaigns</strong>
+                                    <p>Win back inactive subscribers automatically</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">⚡</span>
+                                <div>
+                                    <strong>Behavioral Triggers</strong>
+                                    <p>Send the right message based on user actions</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card-visual">
+                    <div class="visual-card emailauto">
+                        <div class="visual-header">
+                            <span class="visual-icon">📧</span>
+                            <span class="visual-label">Email Automation</span>
+                        </div>
+                        <div class="visual-metrics">
+                            <div class="metric">
+                                <span class="metric-value">42x</span>
+                                <span class="metric-label">Avg. ROI</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">24/7</span>
+                                <span class="metric-label">Running</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Auto</span>
+                                <span class="metric-label">Triggers</span>
+                            </div>
+                        </div>
+                        <div class="visual-footer">
+                            <span class="tag">Drip</span>
+                            <span class="tag">Sequences</span>
+                            <span class="tag">Triggers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-cta">
+                <a href="/contact?service=email-automation" class="hero-btn-primary">
+                    <span class="btn-bg"></span>
+                    <span class="btn-content">
+                        <span class="btn-text">Setup Email Automation</span>
+                        <span class="btn-arrow">→</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Automation Service 10: Chatbot -->
+        <div class="service-block reveal" id="chatbot-automation">
+            <div class="service-block-header">
+                <div class="service-number">10</div>
+                <div class="service-meta">
+                    <span class="service-label">24/7 ENGAGEMENT</span>
+                    <h2 class="service-title">Chatbot & Messenger Automation</h2>
+                    <p class="service-tagline">Respond Instantly. Always Available.</p>
+                </div>
+            </div>
+            
+            <div class="service-block-content">
+                <div class="service-description">
+                    <p class="service-intro">
+                        Never miss a conversation. <strong>24/7 chat automation</strong> for your website, 
+                        Facebook Messenger, and Instagram DMs—qualifying leads and answering questions even when you're offline.
+                    </p>
+                    
+                    <div class="service-benefits">
+                        <h4>What's Included</h4>
+                        <ul>
+                            <li>
+                                <span class="benefit-icon">💬</span>
+                                <div>
+                                    <strong>Website Live Chat</strong>
+                                    <p>AI-powered chat widget that engages visitors instantly</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">📘</span>
+                                <div>
+                                    <strong>Facebook Messenger Bots</strong>
+                                    <p>Automated conversations in Facebook Messenger</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">📸</span>
+                                <div>
+                                    <strong>Instagram DM Automation</strong>
+                                    <p>Auto-respond to DMs and story mentions</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">❓</span>
+                                <div>
+                                    <strong>FAQ & Support Automation</strong>
+                                    <p>Handle common questions automatically</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card-visual">
+                    <div class="visual-card chatbot">
+                        <div class="visual-header">
+                            <span class="visual-icon">🤖</span>
+                            <span class="visual-label">Chatbot</span>
+                        </div>
+                        <div class="visual-metrics">
+                            <div class="metric">
+                                <span class="metric-value">24/7</span>
+                                <span class="metric-label">Response</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">&lt;1s</span>
+                                <span class="metric-label">Reply Time</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Multi</span>
+                                <span class="metric-label">Platform</span>
+                            </div>
+                        </div>
+                        <div class="visual-footer">
+                            <span class="tag">Website</span>
+                            <span class="tag">Messenger</span>
+                            <span class="tag">Instagram</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-cta">
+                <a href="/contact?service=chatbot" class="hero-btn-primary">
+                    <span class="btn-bg"></span>
+                    <span class="btn-content">
+                        <span class="btn-text">Deploy My Chatbot</span>
+                        <span class="btn-arrow">→</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ============================================
+     PILLAR 3: AI ENGINEERING SOLUTIONS
+     ============================================ -->
+<section class="services-ai section-padding" id="ai-engineering">
+    <div class="ai-section-bg">
+        <div class="ai-orb ai-orb-1"></div>
+        <div class="ai-orb ai-orb-2"></div>
+    </div>
+    
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">
+                <span class="eyebrow-icon">🤖</span>
+                PILLAR 3
+            </span>
+            <h2 class="section-title">
+                AI Engineering<br>
+                <span class="gradient-text">Solutions</span>
+            </h2>
+            <p class="section-subtitle">
+                For enterprises ready to build proprietary AI infrastructure as a competitive advantage.
+            </p>
+        </div>
+
+        <!-- AI Service 11: Custom AI Agents -->
+        <div class="service-block reveal" id="custom-ai-agents">
+            <div class="service-block-header">
+                <div class="service-number">11</div>
+                <div class="service-meta">
+                    <span class="service-label">AUTONOMOUS SYSTEMS</span>
+                    <h2 class="service-title">Custom AI Agents</h2>
+                    <p class="service-tagline">Deploy Autonomous Workflows.</p>
+                </div>
+            </div>
+            
+            <div class="service-block-content">
+                <div class="service-description">
+                    <p class="service-intro">
+                        Deploy <strong>autonomous AI agents</strong> that execute multi-step workflows, 
+                        make decisions, and work 24/7 without human intervention—from research to execution.
+                    </p>
+                    
+                    <div class="service-benefits">
+                        <h4>What's Included</h4>
+                        <ul>
+                            <li>
+                                <span class="benefit-icon">⚡</span>
+                                <div>
+                                    <strong>n8n & LangChain Deployment</strong>
+                                    <p>Build complex agent workflows with industry-leading frameworks</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">📋</span>
+                                <div>
+                                    <strong>AI Project Managers</strong>
+                                    <p>Agents that coordinate tasks, track progress, and report updates</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">🔍</span>
+                                <div>
+                                    <strong>AI Research Analysts</strong>
+                                    <p>Automated research, competitive analysis, and report generation</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">👥</span>
+                                <div>
+                                    <strong>AI Customer Success Agents</strong>
+                                    <p>Handle onboarding, support, and customer communication automatically</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card-visual">
+                    <div class="visual-card ai-agent">
+                        <div class="visual-header">
+                            <span class="visual-icon">🧠</span>
+                            <span class="visual-label">AI Agents</span>
+                        </div>
+                        <div class="visual-metrics">
+                            <div class="metric">
+                                <span class="metric-value">40-60%</span>
+                                <span class="metric-label">Efficiency</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">24/7</span>
+                                <span class="metric-label">Autonomous</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Multi</span>
+                                <span class="metric-label">Task</span>
+                            </div>
+                        </div>
+                        <div class="visual-footer">
+                            <span class="tag">n8n</span>
+                            <span class="tag">LangChain</span>
+                            <span class="tag">Custom</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-cta">
+                <a href="/contact?service=ai-agents" class="hero-btn-primary">
+                    <span class="btn-bg"></span>
+                    <span class="btn-content">
+                        <span class="btn-text">Build My AI Agent</span>
+                        <span class="btn-arrow">→</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <!-- AI Service 12: Voice AI -->
+        <div class="service-block reveal" id="voice-ai">
+            <div class="service-block-header">
+                <div class="service-number">12</div>
+                <div class="service-meta">
+                    <span class="service-label">24/7 CALLING</span>
+                    <h2 class="service-title">Voice AI Systems</h2>
+                    <p class="service-tagline">Humanoid Voice Agents That Never Sleep.</p>
+                </div>
+            </div>
+            
+            <div class="service-block-content">
+                <div class="service-description">
+                    <p class="service-intro">
+                        <strong>Humanoid voice agents</strong> that qualify leads, book appointments, and 
+                        handle support calls around the clock—no lunch breaks, no sick days, just consistent performance.
+                    </p>
+                    
+                    <div class="service-benefits">
+                        <h4>What's Included</h4>
+                        <ul>
+                            <li>
+                                <span class="benefit-icon">🎙️</span>
+                                <div>
+                                    <strong>Retell AI & Vapi Deployment</strong>
+                                    <p>Industry-leading voice AI platforms for natural conversations</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">📞</span>
+                                <div>
+                                    <strong>Lead Qualification Calls</strong>
+                                    <p>AI calls and qualifies leads before routing to sales</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">📅</span>
+                                <div>
+                                    <strong>Appointment Booking</strong>
+                                    <p>Automated scheduling directly into your calendar</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">🔄</span>
+                                <div>
+                                    <strong>CRM Integration</strong>
+                                    <p>Sync call data, notes, and outcomes to your CRM</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card-visual">
+                    <div class="visual-card voice-ai">
+                        <div class="visual-header">
+                            <span class="visual-icon">🎙️</span>
+                            <span class="visual-label">Voice AI</span>
+                        </div>
+                        <div class="visual-metrics">
+                            <div class="metric">
+                                <span class="metric-value">90%</span>
+                                <span class="metric-label">Cost Savings</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">24/7</span>
+                                <span class="metric-label">Availability</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Human</span>
+                                <span class="metric-label">Quality</span>
+                            </div>
+                        </div>
+                        <div class="visual-footer">
+                            <span class="tag">Retell</span>
+                            <span class="tag">Vapi</span>
+                            <span class="tag">Custom</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-cta">
+                <a href="/contact?service=voice-ai" class="hero-btn-primary">
+                    <span class="btn-bg"></span>
+                    <span class="btn-content">
+                        <span class="btn-text">Deploy Voice AI</span>
+                        <span class="btn-arrow">→</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <!-- AI Service 13: Generative Creative -->
+        <div class="service-block reveal" id="generative-creative">
+            <div class="service-block-header">
+                <div class="service-number">13</div>
+                <div class="service-meta">
+                    <span class="service-label">INFINITE SCALE</span>
+                    <h2 class="service-title">Generative Creative</h2>
+                    <p class="service-tagline">AI-Powered Visual Content at Scale.</p>
+                </div>
+            </div>
+            
+            <div class="service-block-content">
+                <div class="service-description">
+                    <p class="service-intro">
+                        <strong>AI-powered image and video generation</strong> trained on YOUR brand. 
+                        Produce thousands of assets monthly at a fraction of traditional costs.
+                    </p>
+                    
+                    <div class="service-benefits">
+                        <h4>What's Included</h4>
+                        <ul>
+                            <li>
+                                <span class="benefit-icon">🎨</span>
+                                <div>
+                                    <strong>Brand-Trained LoRA Models</strong>
+                                    <p>Custom AI models that understand your brand aesthetics</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">📸</span>
+                                <div>
+                                    <strong>Product Lifestyle Images</strong>
+                                    <p>Generate product photos in any setting or scenario</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">🎬</span>
+                                <div>
+                                    <strong>Video Generation Pipelines</strong>
+                                    <p>Create video content from text prompts</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">🔄</span>
+                                <div>
+                                    <strong>Infinite A/B Test Variations</strong>
+                                    <p>Generate hundreds of creative variations for testing</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card-visual">
+                    <div class="visual-card generative">
+                        <div class="visual-header">
+                            <span class="visual-icon">🎨</span>
+                            <span class="visual-label">Generative AI</span>
+                        </div>
+                        <div class="visual-metrics">
+                            <div class="metric">
+                                <span class="metric-value">94%</span>
+                                <span class="metric-label">Cost Reduction</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">∞</span>
+                                <span class="metric-label">Variations</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Brand</span>
+                                <span class="metric-label">Trained</span>
+                            </div>
+                        </div>
+                        <div class="visual-footer">
+                            <span class="tag">Flux</span>
+                            <span class="tag">SDXL</span>
+                            <span class="tag">Custom</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-cta">
+                <a href="/contact?service=generative-creative" class="hero-btn-primary">
+                    <span class="btn-bg"></span>
+                    <span class="btn-content">
+                        <span class="btn-text">Generate Creative at Scale</span>
+                        <span class="btn-arrow">→</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <!-- AI Service 14: Answer Engine Optimization -->
+        <div class="service-block reveal" id="aeo">
+            <div class="service-block-header">
+                <div class="service-number">14</div>
+                <div class="service-meta">
+                    <span class="service-label">FUTURE-READY</span>
+                    <h2 class="service-title">Answer Engine Optimization</h2>
+                    <p class="service-tagline">Get Cited by AI. Own Zero-Click.</p>
+                </div>
+            </div>
+            
+            <div class="service-block-content">
+                <div class="service-description">
+                    <p class="service-intro">
+                        Get cited by ChatGPT, Perplexity, and AI Overviews. In the <strong>zero-click era</strong>, 
+                        we engineer your brand's presence inside AI responses where customers discover solutions.
+                    </p>
+                    
+                    <div class="service-benefits">
+                        <h4>What's Included</h4>
+                        <ul>
+                            <li>
+                                <span class="benefit-icon">🔮</span>
+                                <div>
+                                    <strong>AI Citation Architecture</strong>
+                                    <p>Structure content for AI crawlers to cite and reference</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">🤖</span>
+                                <div>
+                                    <strong>Crawler Whitelisting</strong>
+                                    <p>Ensure AI systems can access and index your content</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">📊</span>
+                                <div>
+                                    <strong>Brand Sentiment Monitoring</strong>
+                                    <p>Track how AI systems represent your brand</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">🎯</span>
+                                <div>
+                                    <strong>Zero-Click Funnel Design</strong>
+                                    <p>Capture leads even when users never visit your site</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card-visual">
+                    <div class="visual-card aeo">
+                        <div class="visual-header">
+                            <span class="visual-icon">🔮</span>
+                            <span class="visual-label">AEO</span>
+                        </div>
+                        <div class="visual-metrics">
+                            <div class="metric">
+                                <span class="metric-value">12-18%</span>
+                                <span class="metric-label">Higher CVR</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">AI</span>
+                                <span class="metric-label">Citations</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Future</span>
+                                <span class="metric-label">Ready</span>
+                            </div>
+                        </div>
+                        <div class="visual-footer">
+                            <span class="tag">ChatGPT</span>
+                            <span class="tag">Perplexity</span>
+                            <span class="tag">AI Overviews</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-cta">
+                <a href="/contact?service=aeo" class="hero-btn-primary">
+                    <span class="btn-bg"></span>
+                    <span class="btn-content">
+                        <span class="btn-text">Optimize for AI Engines</span>
+                        <span class="btn-arrow">→</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <!-- AI Service 15: Self-Hosted Infrastructure -->
+        <div class="service-block reveal" id="self-hosted-ai">
+            <div class="service-block-header">
+                <div class="service-number">15</div>
+                <div class="service-meta">
+                    <span class="service-label">DATA SOVEREIGN</span>
+                    <h2 class="service-title">Self-Hosted AI Infrastructure</h2>
+                    <p class="service-tagline">Your Data. Your Servers. Zero Egress.</p>
+                </div>
+            </div>
+            
+            <div class="service-block-content">
+                <div class="service-description">
+                    <p class="service-intro">
+                        For data-sensitive enterprises: <strong>AI systems running entirely on YOUR infrastructure</strong>. 
+                        No API calls to external services. Zero data egress. Complete sovereignty.
+                    </p>
+                    
+                    <div class="service-benefits">
+                        <h4>What's Included</h4>
+                        <ul>
+                            <li>
+                                <span class="benefit-icon">🏠</span>
+                                <div>
+                                    <strong>On-Premise Deployment</strong>
+                                    <p>AI models running on your own infrastructure</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">🔒</span>
+                                <div>
+                                    <strong>HIPAA/GDPR Compliant</strong>
+                                    <p>Meet regulatory requirements with private deployments</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">🔓</span>
+                                <div>
+                                    <strong>No Vendor Lock-In</strong>
+                                    <p>Open-source models you can run forever</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">📋</span>
+                                <div>
+                                    <strong>Full Audit Trails</strong>
+                                    <p>Complete logging and compliance documentation</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card-visual">
+                    <div class="visual-card sovereign">
+                        <div class="visual-header">
+                            <span class="visual-icon">🏰</span>
+                            <span class="visual-label">Self-Hosted</span>
+                        </div>
+                        <div class="visual-metrics">
+                            <div class="metric">
+                                <span class="metric-value">100%</span>
+                                <span class="metric-label">Sovereignty</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Zero</span>
+                                <span class="metric-label">Data Egress</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">HIPAA</span>
+                                <span class="metric-label">Compliant</span>
+                            </div>
+                        </div>
+                        <div class="visual-footer">
+                            <span class="tag">Llama</span>
+                            <span class="tag">Mistral</span>
+                            <span class="tag">Custom</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-cta">
+                <a href="/contact?service=self-hosted" class="hero-btn-primary">
+                    <span class="btn-bg"></span>
+                    <span class="btn-content">
+                        <span class="btn-text">Deploy On-Premise AI</span>
+                        <span class="btn-arrow">→</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ============================================
+     PRICING CTA
+     ============================================ -->
+<section class="services-pricing-cta section-padding">
     <div class="pricing-bg">
         <div class="pricing-orb pricing-orb-1"></div>
         <div class="pricing-orb pricing-orb-2"></div>
     </div>
     
     <div class="container">
-        <div class="section-header reveal">
-            <span class="section-eyebrow">FLEXIBLE PACKAGES</span>
-            <h2 class="section-title">
-                Marketing Solutions<br>
-                <span class="gradient-text">For Every Business</span>
-            </h2>
-            <p class="section-subtitle">
-                Choose a package that fits your goals, or let us create a custom solution 
-                tailored to your specific needs.
-            </p>
-        </div>
-        
-        <div class="pricing-grid">
-            <!-- Starter -->
-            <div class="pricing-card reveal">
-                <div class="pricing-header">
-                    <span class="pricing-label">STARTER</span>
-                    <h3 class="pricing-name">Essential Growth</h3>
-                    <p class="pricing-desc">Perfect for small businesses starting their digital journey</p>
-                </div>
-                <div class="pricing-price">
-                    <span class="price-amount">$999</span>
-                    <span class="price-term">/month</span>
-                </div>
-                <ul class="pricing-features">
-                    <li><span class="check">✓</span> Social Media Management (2 platforms)</li>
-                    <li><span class="check">✓</span> 12 Posts per Month</li>
-                    <li><span class="check">✓</span> Basic Analytics Tracking</li>
-                    <li><span class="check">✓</span> Monthly Performance Report</li>
-                    <li><span class="check">✓</span> Email Support</li>
-                </ul>
-                <a href="/contact?package=starter" class="pricing-cta">
-                    Get Started
-                </a>
-            </div>
-            
-            <!-- Growth -->
-            <div class="pricing-card featured reveal">
-                <div class="featured-badge">MOST POPULAR</div>
-                <div class="pricing-header">
-                    <span class="pricing-label">GROWTH</span>
-                    <h3 class="pricing-name">Full-Stack Marketing</h3>
-                    <p class="pricing-desc">Complete digital marketing for scaling businesses</p>
-                </div>
-                <div class="pricing-price">
-                    <span class="price-amount">$2,499</span>
-                    <span class="price-term">/month</span>
-                </div>
-                <ul class="pricing-features">
-                    <li><span class="check">✓</span> Social Media (4 platforms)</li>
-                    <li><span class="check">✓</span> Google Ads Management</li>
-                    <li><span class="check">✓</span> Full Tracking Setup</li>
-                    <li><span class="check">✓</span> Email Marketing (up to 5K contacts)</li>
-                    <li><span class="check">✓</span> Dedicated Account Manager</li>
-                    <li><span class="check">✓</span> Bi-Weekly Strategy Calls</li>
-                </ul>
-                <a href="/contact?package=growth" class="pricing-cta featured">
-                    Get Started
-                </a>
-            </div>
-            
-            <!-- Enterprise -->
-            <div class="pricing-card reveal">
-                <div class="pricing-header">
-                    <span class="pricing-label">ENTERPRISE</span>
-                    <h3 class="pricing-name">Complete Solution</h3>
-                    <p class="pricing-desc">Full-service marketing partnership for established brands</p>
-                </div>
-                <div class="pricing-price">
-                    <span class="price-amount">Custom</span>
-                    <span class="price-term">pricing</span>
-                </div>
-                <ul class="pricing-features">
-                    <li><span class="check">✓</span> All Growth Features</li>
-                    <li><span class="check">✓</span> Custom Web Design & Development</li>
-                    <li><span class="check">✓</span> Advanced PPC Campaigns</li>
-                    <li><span class="check">✓</span> Unlimited Email Contacts</li>
-                    <li><span class="check">✓</span> Priority Support</li>
-                    <li><span class="check">✓</span> Weekly Strategy Sessions</li>
-                    <li><span class="check">✓</span> Custom Integrations</li>
-                </ul>
-                <a href="/contact?package=enterprise" class="pricing-cta">
-                    Contact Us
-                </a>
-            </div>
-        </div>
-        
-        <!-- Custom Package Teaser -->
-        <div class="roi-teaser reveal">
-            <div class="roi-content">
-                <h4 class="roi-title">Need a Custom Solution?</h4>
-                <p class="roi-desc">
-                    Every business is unique. Let's discuss your specific goals and create 
-                    a tailored marketing strategy that delivers real results.
+        <div class="pricing-cta-card reveal">
+            <div class="pricing-cta-content">
+                <span class="section-eyebrow">TRANSPARENT PRICING</span>
+                <h2 class="section-title">
+                    Solutions For<br>
+                    <span class="gradient-text">Every Business Stage</span>
+                </h2>
+                <p class="pricing-cta-desc">
+                    From startup to enterprise, we have flexible packages for Digital Marketing, 
+                    Automation, and AI Engineering. View our complete pricing options.
                 </p>
+                
+                <div class="pricing-preview">
+                    <div class="preview-item">
+                        <span class="preview-icon">📱</span>
+                        <div class="preview-info">
+                            <span class="preview-label">Digital Marketing</span>
+                            <span class="preview-price">From $999/mo</span>
+                        </div>
+                    </div>
+                    <div class="preview-item">
+                        <span class="preview-icon">⚡</span>
+                        <div class="preview-info">
+                            <span class="preview-label">Automation</span>
+                            <span class="preview-price">From $1,499/mo</span>
+                        </div>
+                    </div>
+                    <div class="preview-item">
+                        <span class="preview-icon">🤖</span>
+                        <div class="preview-info">
+                            <span class="preview-label">AI Engineering</span>
+                            <span class="preview-price">From $2,999/mo</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pricing-cta-actions">
+                    <a href="/pricing" class="hero-btn-primary">
+                        <span class="btn-content">
+                            <span class="btn-text">View All Pricing</span>
+                            <span class="btn-arrow">→</span>
+                        </span>
+                    </a>
+                    <a href="/contact?type=custom" class="hero-btn-secondary">
+                        <span class="btn-content">
+                            <span class="btn-text">Get Custom Quote</span>
+                        </span>
+                    </a>
+                </div>
             </div>
-            <a href="/contact?type=custom" class="hero-btn-secondary">
-                <span class="btn-content">
-                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-                        <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                        <line x1="15" y1="9" x2="15.01" y2="9"></line>
-                    </svg>
-                    <span class="btn-text">Book Free Consultation</span>
-                </span>
-            </a>
         </div>
     </div>
 </section>
+
+<style>
+/* Services Pricing CTA */
+.services-pricing-cta {
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-cta-card {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 24px;
+    padding: 60px;
+    text-align: center;
+}
+
+.pricing-cta-desc {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+}
+
+.pricing-preview {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.preview-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.preview-icon {
+    font-size: 1.5rem;
+}
+
+.preview-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.preview-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.preview-price {
+    font-weight: 600;
+    color: var(--primary-light);
+}
+
+.pricing-cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .pricing-cta-card {
+        padding: 40px 24px;
+    }
+    
+    .pricing-preview {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .preview-item {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+</style>
 
 <!-- ============================================
      WHY CHOOSE US
