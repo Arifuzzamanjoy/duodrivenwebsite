@@ -1,0 +1,25 @@
+[Unit]
+Description=DUODRIVEN Flask Application
+After=network.target
+
+[Service]
+User=duodriven
+WorkingDirectory=/home/duodriven/public_html/duodrivenwebsite
+Environment="PATH=/home/duodriven/public_html/duodrivenwebsite/venv/bin"
+EnvironmentFile=/home/duodriven/public_html/duodrivenwebsite/.env
+ExecStart=/home/duodriven/public_html/duodrivenwebsite/venv/bin/gunicorn \
+    --workers 4 \
+    --worker-class sync \
+    --bind 127.0.0.1:8000 \
+    --timeout 60 \
+    --access-logfile /home/duodriven/public_html/duodrivenwebsite/logs/access.log \
+    --error-logfile /home/duodriven/public_html/duodrivenwebsite/logs/error.log \
+    wsgi:app
+
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
