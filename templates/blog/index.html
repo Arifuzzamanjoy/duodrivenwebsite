@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+
+{% block title %}Growth Engineering Blog | DUODRIVEN{% endblock %}
+{% block meta_description %}AI marketing strategies, automation playbooks, and growth insights from DUODRIVEN. Learn how to build Autonomous Revenue Systems.{% endblock %}
+
+{% block content %}
+<!-- Blog Hero -->
+<section class="blog-hero">
+    <div class="container">
+        <span class="section-label">📚 INSIGHTS & RESOURCES</span>
+        <h1>Growth Engineering Blog</h1>
+        <p>AI marketing strategies, automation playbooks, and growth insights.</p>
+    </div>
+</section>
+
+<!-- Blog Filters -->
+<div class="blog-filters">
+    <div class="container">
+        <a href="/blog" class="filter-btn {% if not current_category and not current_tag %}active{% endif %}">All</a>
+        {% for cat, count in categories %}
+        <a href="/blog?category={{ cat }}" class="filter-btn {% if current_category == cat %}active{% endif %}">
+            {{ cat | replace('-', ' ') | title }} ({{ count }})
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Blog Content -->
+<section class="blog-section">
+    <div class="container">
+        <div class="blog-layout">
+            <!-- Main Content -->
+            <div class="blog-main">
+                {% if posts.items %}
+                <div class="blog-grid">
+                    {% for post in posts.items %}
+                    <article class="blog-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                        {% if post.featured_image %}
+                        <a href="/blog/{{ post.slug }}" class="blog-card-image">
+                            <img src="{{ post.featured_image }}" alt="{{ post.title }}" loading="lazy">
+                        </a>
+                        {% else %}
+                        <a href="/blog/{{ post.slug }}" class="blog-card-image placeholder">
+                            <span class="placeholder-icon">📝</span>
+                        </a>
+                        {% endif %}
+                        
+                        <div class="blog-card-content">
+                            <div class="blog-card-meta">
+                                <a href="/blog?category={{ post.category }}" class="blog-category">
+                                    {{ post.category | replace('-', ' ') | upper }}
+                                </a>
+                                <span class="blog-date">{{ post.published_at.strftime('%b %d, %Y') if post.published_at else 'Draft' }}</span>
+                            </div>
+                            
+                            <h2 class="blog-card-title">
+                                <a href="/blog/{{ post.slug }}">{{ post.title }}</a>
+                            </h2>
+                            
+                            <p class="blog-card-excerpt">{{ post.excerpt[:150] }}{% if post.excerpt|length > 150 %}...{% endif %}</p>
+                            
+                            <div class="blog-card-footer">
+                                <span class="read-time">{{ post.read_time }} min read</span>
+                                <a href="/blog/{{ post.slug }}" class="read-more">
+                                    Read More →
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+                
+                <!-- Pagination -->
+                {% if posts.pages > 1 %}
+                <div class="pagination">
+                    {% if posts.has_prev %}
+                    <a href="/blog?page={{ posts.prev_num }}{% if current_category %}&category={{ current_category }}{% endif %}" class="pagination-btn">
+                        ← Previous
+                    </a>
+                    {% endif %}
+                    
+                    <span class="pagination-info">Page {{ posts.page }} of {{ posts.pages }}</span>
+                    
+                    {% if posts.has_next %}
+                    <a href="/blog?page={{ posts.next_num }}{% if current_category %}&category={{ current_category }}{% endif %}" class="pagination-btn">
+                        Next →
+                    </a>
+                    {% endif %}
+                </div>
+                {% endif %}
+                
+                {% else %}
+                <!-- No Posts Yet -->
+                <div class="no-posts">
+                    <div class="no-posts-icon">📝</div>
+                    <h3>Coming Soon</h3>
+                    <p>We're preparing valuable content for you. Check back soon!</p>
+                    <p class="no-posts-cta">In the meantime, <a href="/contact">get in touch</a> to discuss your growth needs.</p>
+                </div>
+                {% endif %}
+            </div>
+            
+            <!-- Sidebar -->
+            <aside class="blog-sidebar">
+                <!-- Newsletter Signup -->
+                <div class="sidebar-widget newsletter-widget">
+                    <h3>📬 Get Growth Insights</h3>
+                    <p>Join 2,500+ marketers getting weekly AI and automation strategies.</p>
+                    <form class="newsletter-form" id="sidebarNewsletter">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                    <span class="newsletter-note">No spam. Unsubscribe anytime.</span>
+                </div>
+                
+                <!-- Popular Tags -->
+                {% if popular_tags %}
+                <div class="sidebar-widget">
+                    <h3>🏷️ Popular Topics</h3>
+                    <div class="tag-cloud">
+                        {% for tag, count in popular_tags %}
+                        <a href="/blog?tag={{ tag }}" class="tag {% if current_tag == tag %}active{% endif %}">
+                            #{{ tag }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+                
+                <!-- CTA Widget -->
+                <div class="sidebar-widget cta-widget">
+                    <h3>🚀 Ready to Scale?</h3>
+                    <p>Let us implement these strategies for your business.</p>
+                    <a href="/contact" class="btn btn-primary btn-block">Free Consultation</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<!-- Blog CTA -->
+<section class="blog-cta-section">
+    <div class="container">
+        <div class="blog-cta-card">
+            <h2>Want These Strategies Implemented?</h2>
+            <p>Our team can apply these growth tactics to your business.</p>
+            <div class="blog-cta-buttons">
+                <a href="/contact" class="btn btn-primary btn-lg">Get Free Consultation →</a>
+                <button onclick="toggleChat()" class="btn btn-outline btn-lg">Talk to AI Agent</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// Newsletter subscription handler
+document.getElementById('sidebarNewsletter')?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const email = this.querySelector('input[type="email"]').value;
+    const btn = this.querySelector('button');
+    
+    btn.disabled = true;
+    btn.textContent = 'Subscribing...';
+    
+    try {
+        const response = await fetch('/api/v1/newsletter/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, source: 'blog_sidebar' })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            this.innerHTML = '<div class="success-message">✅ Subscribed! Check your inbox.</div>';
+        } else {
+            throw new Error(data.error);
+        }
+    } catch (error) {
+        btn.disabled = false;
+        btn.textContent = 'Subscribe';
+        alert('Something went wrong. Please try again.');
+    }
+});
+</script>
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/blog.css') }}">
+{% endblock %}

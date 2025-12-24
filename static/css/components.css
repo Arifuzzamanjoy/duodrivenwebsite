@@ -1263,3 +1263,581 @@
   color: var(--color-text-secondary);
   text-transform: uppercase;
 }
+
+/* ============================================
+ * MOBILE MENU - FULL SCREEN
+ * ============================================ */
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #030712 0%, #0a0f1a 50%, #0f172a 100%);
+  z-index: calc(var(--z-modal) + 10);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+}
+
+.mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.mobile-menu-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 0;
+}
+
+/* Mobile Menu Header */
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.mobile-logo .logo-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mobile-close {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-text-secondary);
+  transition: all 0.3s ease;
+}
+
+.mobile-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-primary);
+}
+
+/* Mobile Menu Links */
+.mobile-menu-links {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 0.5rem;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:active {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: translateX(8px);
+}
+
+.mobile-link-icon {
+  font-size: 1.25rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 10px;
+}
+
+.mobile-link-text {
+  flex: 1;
+}
+
+/* Mobile Menu CTA */
+.mobile-menu-cta {
+  padding: 1rem 1.5rem;
+}
+
+.mobile-cta-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+/* Mobile Menu Footer */
+.mobile-menu-footer {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.mobile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 50px;
+  margin-bottom: 1rem;
+}
+
+.mobile-badge .badge-pulse {
+  width: 8px;
+  height: 8px;
+  background: #10B981;
+  border-radius: 50%;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.mobile-badge .badge-text {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #10B981;
+}
+
+.mobile-tagline {
+  font-size: 0.85rem;
+  color: var(--color-text-tertiary);
+  margin-bottom: 1rem;
+}
+
+.mobile-social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.mobile-social a {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-text-secondary);
+  transition: all 0.3s ease;
+}
+
+.mobile-social a:hover {
+  background: var(--color-accent-blue);
+  color: white;
+}
+
+/* Nav Logo Text for Mobile */
+.nav-logo .logo-text {
+  display: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (max-width: 1023px) {
+  .nav-logo .logo-text {
+    display: block;
+    font-size: 1.1rem;
+  }
+  
+  .nav-logo img {
+    display: none;
+  }
+}
+
+/* ============================================
+ * GLOBAL MOBILE RESPONSIVE FIXES
+ * ============================================ */
+
+/* Page Hero Sections - Mobile */
+@media (max-width: 768px) {
+  /* Hero Badge - Mobile */
+  .hero-badge {
+    padding: 6px 14px;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .badge-text {
+    font-size: 0.65rem;
+  }
+  
+  .badge-subtext {
+    font-size: 0.65rem;
+  }
+  
+  .badge-divider {
+    display: none;
+  }
+  
+  /* Hero Title - Mobile */
+  .hero-title,
+  .services-title,
+  .tech-title,
+  .case-title,
+  .contact-title,
+  .about-title {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    padding: 0 0.5rem;
+  }
+  
+  .title-line {
+    display: block;
+  }
+  
+  /* Hero Subtitle - Mobile */
+  .hero-subtitle,
+  .services-subtitle,
+  .tech-subtitle,
+  .case-subtitle,
+  .contact-subtitle,
+  .about-subtitle {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Section Headers - Mobile */
+  .section-header {
+    padding: 0 1rem;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  
+  .section-eyebrow {
+    font-size: 0.75rem;
+  }
+  
+  /* Pain Points - Mobile */
+  .hero-pain-points {
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  .pain-item {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    gap: 6px;
+  }
+  
+  .pain-icon {
+    font-size: 1rem;
+  }
+  
+  /* CTA Buttons - Mobile */
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 1.5rem;
+  }
+  
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    padding: 14px 24px;
+  }
+  
+  /* Social Proof - Mobile */
+  .hero-social-proof {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+  
+  .proof-avatars {
+    justify-content: center;
+  }
+  
+  .proof-text {
+    font-size: 0.85rem;
+  }
+  
+  /* Trust Badges - Mobile */
+  .hero-trust-badges {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  
+  .trust-badge {
+    font-size: 0.75rem;
+  }
+  
+  /* Breadcrumb - Mobile */
+  .breadcrumb {
+    font-size: 0.8rem;
+  }
+  
+  /* Grids - Mobile */
+  .services-grid,
+  .pricing-grid,
+  .tech-grid,
+  .values-grid,
+  .philosophy-principles {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  /* Cards - Mobile */
+  .service-card,
+  .pricing-card,
+  .tech-card,
+  .value-card,
+  .feature-card {
+    padding: 1.25rem;
+    margin: 0 0.5rem;
+  }
+  
+  /* Service Pillars Navigation - Mobile */
+  .services-pillars {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 1rem;
+  }
+  
+  .pillar-nav {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  /* Pricing Tabs - Mobile */
+  .pricing-tabs {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+  
+  .pricing-tab {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+  
+  /* Overview Stats - Mobile */
+  .overview-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .overview-stat .stat-value {
+    font-size: 1.5rem;
+  }
+  
+  .overview-stat .stat-label {
+    font-size: 0.7rem;
+  }
+  
+  /* Forms - Mobile */
+  .form-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-form-wrapper {
+    padding: 1.5rem;
+    margin: 0 0.5rem;
+  }
+  
+  .checkbox-group {
+    gap: 0.75rem;
+  }
+  
+  .checkbox-label {
+    font-size: 0.85rem;
+    padding: 0.75rem;
+  }
+  
+  /* Transformation Section - Mobile */
+  .transformation-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .transform-card {
+    padding: 1.5rem;
+  }
+  
+  /* Tech Cards - Mobile */
+  .tech-card {
+    padding: 1.25rem;
+  }
+  
+  .tech-tools {
+    flex-wrap: wrap;
+  }
+  
+  .tool {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+  
+  /* Case Studies - Mobile */
+  .case-card {
+    padding: 1.5rem;
+    margin: 0 0.5rem;
+  }
+  
+  .case-headline {
+    font-size: 1.25rem;
+  }
+  
+  .case-content {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Container padding - Mobile */
+  .container {
+    padding: 0 1rem;
+  }
+  
+  /* Section padding - Mobile */
+  .section-padding {
+    padding: 60px 0;
+  }
+  
+  /* Problem Grid - Mobile */
+  .problem-grid,
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .problem-visual {
+    order: 1;
+  }
+  
+  .problem-content {
+    order: 2;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .hero-title,
+  .services-title,
+  .tech-title,
+  .case-title,
+  .contact-title,
+  .about-title {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+  
+  .hero-badge {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .overview-stats {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .hero-cta-group {
+    padding: 0 1rem;
+  }
+  
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    max-width: 100%;
+  }
+  
+  .mobile-menu-links {
+    padding: 1rem;
+  }
+  
+  .mobile-nav-link {
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .mobile-link-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Tablet Landscape / Small Desktop */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .nav-menu {
+    display: none;
+  }
+  
+  .nav-cta {
+    display: none;
+  }
+  
+  .nav-toggle {
+    display: flex;
+  }
+  
+  .services-grid,
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .overview-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+

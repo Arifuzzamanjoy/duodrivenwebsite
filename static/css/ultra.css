@@ -5595,3 +5595,880 @@
         gap: 15px;
     }
 }
+
+/* ============================================
+   COMPREHENSIVE MOBILE RESPONSIVE STYLES
+   ============================================ */
+
+/* Hero Section Mobile Fixes */
+@media (max-width: 768px) {
+    .hero-ultra {
+        min-height: auto;
+        padding-bottom: 80px;
+    }
+    
+    .hero-content {
+        padding: 100px 0 60px;
+    }
+    
+    .hero-inner {
+        padding: 0 1rem;
+    }
+    
+    /* Hero Badge Mobile */
+    .hero-badge {
+        padding: 8px 16px;
+        gap: 6px;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .badge-text {
+        font-size: 0.6rem;
+        letter-spacing: 0.05em;
+    }
+    
+    .badge-subtext {
+        font-size: 0.6rem;
+    }
+    
+    .badge-divider {
+        display: none;
+    }
+    
+    /* Hero Title Mobile */
+    .hero-title {
+        font-size: clamp(1.75rem, 7vw, 2.5rem);
+        margin-bottom: 1rem;
+    }
+    
+    .title-sub {
+        font-size: 0.55em;
+    }
+    
+    /* Hero Subtitle Mobile */
+    .hero-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin: 0 auto 1.5rem;
+        padding: 0 0.5rem;
+    }
+    
+    /* Pain Points Mobile */
+    .hero-pain-points {
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .pain-item {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+        gap: 6px;
+        background: rgba(59, 130, 246, 0.1);
+        border-color: rgba(59, 130, 246, 0.2);
+    }
+    
+    .pain-icon {
+        font-size: 0.9rem;
+    }
+    
+    /* Hero CTA Mobile */
+    .hero-cta-group {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-btn-primary,
+    .hero-btn-secondary {
+        width: 100%;
+        max-width: 300px;
+        padding: 14px 24px;
+        justify-content: center;
+    }
+    
+    .hero-btn-primary .btn-content,
+    .hero-btn-secondary .btn-content {
+        font-size: 0.9rem;
+    }
+    
+    /* Social Proof Mobile */
+    .hero-social-proof {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .proof-avatars {
+        justify-content: center;
+    }
+    
+    .avatar {
+        width: 36px;
+        height: 36px;
+        font-size: 0.75rem;
+    }
+    
+    .proof-text {
+        font-size: 0.85rem;
+        text-align: center;
+    }
+    
+    /* Trust Badges Mobile */
+    .hero-trust-badges {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    
+    .trust-badge {
+        font-size: 0.75rem;
+        gap: 4px;
+    }
+    
+    .trust-badge svg {
+        width: 14px;
+        height: 14px;
+    }
+    
+    /* Hero Ticker Mobile */
+    .hero-ticker {
+        padding: 12px 0;
+    }
+    
+    .ticker-item {
+        gap: 2rem;
+    }
+    
+    .ticker-value {
+        font-size: 1rem;
+    }
+    
+    .ticker-label {
+        font-size: 0.6rem;
+    }
+}
+
+/* Page Hero Sections Mobile */
+@media (max-width: 768px) {
+    .services-hero,
+    .pricing-hero,
+    .tech-hero,
+    .case-hero,
+    .contact-hero,
+    .about-hero {
+        padding: 100px 0 60px;
+    }
+    
+    .services-hero-content,
+    .pricing-hero-content,
+    .tech-hero-content,
+    .case-hero-content,
+    .contact-hero-content,
+    .about-hero-content {
+        text-align: center;
+    }
+    
+    /* Page Titles Mobile */
+    .services-title,
+    .tech-title,
+    .case-title,
+    .contact-title,
+    .about-title {
+        font-size: clamp(1.6rem, 7vw, 2.25rem);
+        margin-bottom: 1rem;
+    }
+    
+    .title-gradient {
+        display: block;
+    }
+    
+    /* Page Subtitles Mobile */
+    .services-subtitle,
+    .tech-subtitle,
+    .case-subtitle,
+    .contact-subtitle,
+    .about-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        padding: 0 0.5rem;
+    }
+    
+    .highlight {
+        display: inline;
+    }
+    
+    /* Breadcrumb Mobile */
+    .breadcrumb {
+        font-size: 0.8rem;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Transformation Section Mobile */
+@media (max-width: 900px) {
+    .section-transformation {
+        padding: 80px 0;
+    }
+    
+    .section-header-ultra {
+        margin-bottom: 2.5rem;
+        padding: 0 1rem;
+    }
+    
+    .transformation-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .transform-card {
+        width: 100%;
+    }
+    
+    .transform-arrow {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem 0;
+    }
+    
+    .arrow-line {
+        width: 40px;
+        height: 2px;
+    }
+    
+    .arrow-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .arrow-icon svg {
+        width: 20px;
+        height: 20px;
+        transform: rotate(90deg);
+    }
+}
+
+/* Services Section Mobile */
+@media (max-width: 1024px) {
+    .section-services {
+        padding: 80px 0;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .service-card-ultra {
+        border-radius: 20px;
+    }
+    
+    .service-card-content {
+        padding: 1.5rem;
+    }
+    
+    .service-title {
+        font-size: 1.25rem;
+    }
+    
+    .service-hook {
+        font-size: 0.9rem;
+    }
+}
+
+/* Stats Section Mobile */
+@media (max-width: 768px) {
+    .stats-section {
+        padding: 60px 0;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    .stat-card-ultra {
+        padding: 1.25rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.75rem;
+    }
+}
+
+/* CTA Section Mobile */
+@media (max-width: 768px) {
+    .section-cta {
+        padding: 60px 0;
+    }
+    
+    .cta-card {
+        padding: 40px 20px;
+        margin: 0 1rem;
+        border-radius: 24px;
+    }
+    
+    .cta-title {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+        margin-bottom: 1rem;
+    }
+    
+    .cta-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 2rem;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .cta-trust {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+}
+
+/* Pillar Navigation Mobile */
+@media (max-width: 768px) {
+    .services-pillars {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .pillar-nav {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Pricing Section Mobile */
+@media (max-width: 768px) {
+    .pricing-tabs {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0 1rem;
+    }
+    
+    .pricing-tab {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        padding: 12px 20px;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .pricing-card {
+        padding: 1.5rem;
+    }
+    
+    .pricing-card.featured {
+        transform: none;
+    }
+    
+    .pricing-name {
+        font-size: 1.25rem;
+    }
+    
+    .price-amount {
+        font-size: 2.5rem;
+    }
+}
+
+/* Contact Form Mobile */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 0.5rem;
+    }
+    
+    .contact-form-wrapper {
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-header {
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-title {
+        font-size: 1.25rem;
+    }
+    
+    .checkbox-group {
+        gap: 0.75rem;
+    }
+    
+    .checkbox-label {
+        font-size: 0.85rem;
+        padding: 0.75rem;
+    }
+}
+
+/* Case Studies Mobile */
+@media (max-width: 768px) {
+    .case-overview {
+        padding: 40px 0;
+    }
+    
+    .overview-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .overview-stat {
+        padding: 1rem;
+    }
+    
+    .overview-stat .stat-value {
+        font-size: 1.5rem;
+    }
+    
+    .overview-stat .stat-label {
+        font-size: 0.65rem;
+    }
+    
+    .case-card {
+        margin: 0 1rem;
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+    
+    .case-headline {
+        font-size: 1.15rem;
+        line-height: 1.4;
+    }
+    
+    .case-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .case-story {
+        order: 1;
+    }
+    
+    .case-metrics {
+        order: 2;
+    }
+}
+
+/* About Page Mobile */
+@media (max-width: 768px) {
+    .problem-grid,
+    .philosophy-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .problem-visual {
+        order: 1;
+    }
+    
+    .problem-content {
+        order: 2;
+    }
+    
+    .problem-card {
+        padding: 1.25rem;
+    }
+    
+    .vs-badge {
+        margin: 1rem auto;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .value-card {
+        padding: 1.5rem;
+    }
+    
+    .value-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* Technology Page Mobile */
+@media (max-width: 768px) {
+    .philosophy-principles {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    .principle-card {
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .principle-icon {
+        font-size: 1.5rem;
+    }
+    
+    .principle-card h4 {
+        font-size: 0.85rem;
+    }
+    
+    .principle-card p {
+        font-size: 0.75rem;
+    }
+    
+    .tech-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .tech-card {
+        padding: 1.25rem;
+    }
+    
+    .tech-tools {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .tool {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: clamp(1.5rem, 8vw, 2rem);
+    }
+    
+    .services-title,
+    .tech-title,
+    .case-title,
+    .contact-title,
+    .about-title {
+        font-size: clamp(1.4rem, 7vw, 1.75rem);
+    }
+    
+    .section-title {
+        font-size: clamp(1.25rem, 6vw, 1.5rem);
+    }
+    
+    .hero-badge {
+        flex-direction: column;
+        gap: 4px;
+        padding: 8px 12px;
+    }
+    
+    .badge-text,
+    .badge-subtext {
+        font-size: 0.55rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .overview-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .philosophy-principles {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: 0 0.75rem;
+    }
+}
+
+/* ============================================
+   SERVICE BLOCKS - MOBILE RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .service-block {
+        padding: 50px 0;
+    }
+    
+    .service-block-header {
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 32px;
+        text-align: center;
+    }
+    
+    .service-number {
+        font-size: 2.5rem;
+    }
+    
+    .service-meta {
+        text-align: center;
+    }
+    
+    .service-title {
+        font-size: clamp(1.35rem, 5vw, 1.75rem);
+    }
+    
+    .service-tagline {
+        font-size: 0.95rem;
+    }
+    
+    .service-label {
+        font-size: 0.75rem;
+    }
+    
+    .service-block-content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+    
+    .service-intro {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    
+    .service-benefits h4 {
+        text-align: center;
+        font-size: 0.9rem;
+    }
+    
+    .service-benefits li {
+        padding: 16px;
+        gap: 12px;
+    }
+    
+    .service-benefits li:hover {
+        transform: none;
+    }
+    
+    .benefit-icon {
+        font-size: 1.25rem;
+    }
+    
+    .service-benefits li strong {
+        font-size: 0.9rem;
+    }
+    
+    .service-benefits li p {
+        font-size: 0.8rem;
+    }
+    
+    /* Visual Card Mobile */
+    .service-card-visual {
+        position: static;
+        order: -1;
+    }
+    
+    .visual-card {
+        padding: 24px;
+        border-radius: 20px;
+    }
+    
+    .visual-header {
+        margin-bottom: 24px;
+    }
+    
+    .visual-icon {
+        font-size: 1.5rem;
+    }
+    
+    .visual-label {
+        font-size: 0.9rem;
+    }
+    
+    .visual-metrics {
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+    
+    .metric {
+        padding: 12px 6px;
+    }
+    
+    .metric-value {
+        font-size: 1.35rem;
+    }
+    
+    .metric-label {
+        font-size: 0.65rem;
+    }
+    
+    .visual-footer .tag {
+        font-size: 0.7rem;
+        padding: 5px 12px;
+    }
+    
+    .service-cta {
+        text-align: center;
+        margin-top: 32px;
+    }
+    
+    .service-cta .hero-btn-primary {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Comparison Table Mobile */
+@media (max-width: 900px) {
+    .comparison-table {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .comparison-header,
+    .comparison-row {
+        min-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .comparison-table {
+        display: none;
+    }
+}
+
+/* Services CTA Section Mobile */
+@media (max-width: 768px) {
+    .services-cta {
+        padding: 60px 0;
+    }
+    
+    .cta-title {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+    
+    .cta-subtitle {
+        font-size: 0.95rem;
+        padding: 0 0.5rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .cta-buttons .hero-btn-primary,
+    .cta-buttons .hero-btn-secondary {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .cta-trust {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+}
+
+/* Pricing Tabs Mobile */
+@media (max-width: 768px) {
+    .pricing-tabs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .pricing-tab {
+        width: 100%;
+        max-width: 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 20px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        color: var(--color-text-secondary);
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+    }
+    
+    .pricing-tab.active {
+        background: rgba(99, 102, 241, 0.15);
+        border-color: rgba(99, 102, 241, 0.4);
+        color: var(--color-text-primary);
+    }
+    
+    .tab-icon {
+        font-size: 1.1rem;
+    }
+}
+
+/* Bundle Cards Mobile */
+@media (max-width: 768px) {
+    .bundle-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .bundle-card {
+        padding: 1.5rem;
+    }
+    
+    .bundle-card.featured {
+        transform: none;
+    }
+    
+    .bundle-includes {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}

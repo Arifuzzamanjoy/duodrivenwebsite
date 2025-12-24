@@ -1,0 +1,115 @@
+<!-- Exit Intent Popup Component -->
+<div class="exit-popup-overlay" id="exitPopup">
+    <div class="exit-popup">
+        <button class="exit-popup-close" onclick="closeExitPopup()" aria-label="Close popup">×</button>
+        
+        <div class="exit-popup-icon">🎯</div>
+        
+        <h3 class="exit-popup-title">Wait! Don't Leave Empty-Handed</h3>
+        
+        <p class="exit-popup-text">
+            Get our <strong>FREE AI Marketing ROI Calculator</strong> — the same tool our clients use to project 40-60% efficiency gains before they start.
+        </p>
+        
+        <form class="exit-popup-form" id="exitPopupForm" onsubmit="submitExitForm(event)">
+            <input type="email" class="exit-popup-input" placeholder="Enter your email" required id="exitEmail">
+            <button type="submit" class="exit-popup-btn">
+                Get Free Calculator
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 8px;">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </button>
+        </form>
+        
+        <p class="exit-popup-note">
+            🔒 We respect your privacy. Unsubscribe anytime.
+        </p>
+    </div>
+</div>
+
+<script>
+// Exit Intent Popup Logic
+(function() {
+    let popupShown = false;
+    let popupDismissed = sessionStorage.getItem('exitPopupDismissed') === 'true';
+    
+    // Only trigger on desktop (exit intent doesn't work well on mobile)
+    if (window.innerWidth > 768 && !popupDismissed) {
+        document.addEventListener('mouseout', function(e) {
+            // If the mouse leaves the document (likely to close tab/navigate away)
+            if (e.clientY < 10 && !popupShown) {
+                showExitPopup();
+            }
+        });
+        
+        // Also trigger after 45 seconds if user hasn't interacted much
+        setTimeout(function() {
+            if (!popupShown && !popupDismissed && document.visibilityState === 'visible') {
+                // Check if user has scrolled past 50% of page
+                const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                if (scrollPercent > 50) {
+                    showExitPopup();
+                }
+            }
+        }, 45000);
+    }
+    
+    window.showExitPopup = function() {
+        if (popupShown || popupDismissed) return;
+        
+        const popup = document.getElementById('exitPopup');
+        if (popup) {
+            popup.classList.add('active');
+            popupShown = true;
+            document.body.style.overflow = 'hidden';
+        }
+    };
+    
+    window.closeExitPopup = function() {
+        const popup = document.getElementById('exitPopup');
+        if (popup) {
+            popup.classList.remove('active');
+            document.body.style.overflow = '';
+            sessionStorage.setItem('exitPopupDismissed', 'true');
+            popupDismissed = true;
+        }
+    };
+    
+    window.submitExitForm = function(e) {
+        e.preventDefault();
+        const email = document.getElementById('exitEmail').value;
+        
+        // Track the submission
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'lead_magnet_download', {
+                'event_category': 'Lead Generation',
+                'event_label': 'AI ROI Calculator',
+                'value': email
+            });
+        }
+        
+        // Show success message
+        const form = document.getElementById('exitPopupForm');
+        form.innerHTML = '<div style="text-align: center; padding: 20px;"><span style="font-size: 3rem;">✅</span><p style="margin-top: 1rem; font-size: 1.1rem; color: var(--color-accent-emerald);">Check your inbox! Calculator is on its way.</p></div>';
+        
+        // Close popup after delay
+        setTimeout(function() {
+            closeExitPopup();
+        }, 3000);
+    };
+    
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeExitPopup();
+        }
+    });
+    
+    // Close on overlay click
+    document.getElementById('exitPopup')?.addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeExitPopup();
+        }
+    });
+})();
+</script>

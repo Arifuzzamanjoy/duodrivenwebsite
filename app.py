@@ -3,7 +3,7 @@ DUODRIVEN - Full-Stack Growth Engineering
 Flask Application Entry Point
 """
 
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect
 import requests
 import os
 import uuid
@@ -18,9 +18,56 @@ def create_app(config_name='default'):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
     
+    # Database configuration
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///duodriven.db')
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    
     # Store webhook URL
     app.config['N8N_WEBHOOK_URL'] = os.getenv('N8N_WEBHOOK_URL', '')
     app.config['CONTACT_WEBHOOK_URL'] = os.getenv('CONTACT_WEBHOOK_URL', '')
+    
+    # Initialize database
+    from models import db
+    db.init_app(app)
+    
+    # Create tables
+    with app.app_context():
+        db.create_all()
+    
+    # Register blueprints
+    from routes.blog import blog_bp
+    from routes.api import api_bp
+    app.register_blueprint(blog_bp)
+    app.register_blueprint(api_bp)
+    
+    # ============================================
+    # LEGACY URL REDIRECTS (SEO Recovery)
+    # ============================================
+    
+    @app.route('/services/conversion-rate-optimization/')
+    @app.route('/services/conversion-rate-optimization')
+    def redirect_cro():
+        return redirect('/services#web-design', code=301)
+    
+    @app.route('/services/social-media-advertising/')
+    @app.route('/services/social-media-advertising')
+    def redirect_social():
+        return redirect('/services#social-media-marketing', code=301)
+    
+    @app.route('/services/google-ads-management/')
+    @app.route('/services/google-ads-management')
+    def redirect_google():
+        return redirect('/services#google-ads-ppc', code=301)
+    
+    @app.route('/services/seo-optimization/')
+    @app.route('/services/seo-optimization')
+    def redirect_seo():
+        return redirect('/services#digital-marketing', code=301)
+    
+    @app.route('/services/<path:subpath>/')
+    def redirect_old_services(subpath):
+        """Catch any other old service URLs"""
+        return redirect('/services', code=301)
     
     # ============================================
     # ROUTES
@@ -60,7 +107,47 @@ def create_app(config_name='default'):
     def pricing():
         """Pricing page"""
         return render_template('pricing.html')
+
+    # Note: /blog route is now handled by blog_bp blueprint
+
+    @app.route('/pillar/marketing')
+    def pillar_marketing():
+        """Digital Marketing pillar landing page"""
+        return render_template('pillars/marketing.html')
     
+    @app.route('/pillar/automation')
+    def pillar_automation():
+        """Marketing Automation pillar landing page"""
+        return render_template('pillars/automation.html')
+    
+    @app.route('/pillar/ai')
+    def pillar_ai():
+        """AI Engineering pillar landing page"""
+        return render_template('pillars/ai.html')
+    
+    # ============================================
+    # SUBDOMAIN ROUTING MIDDLEWARE
+    # ============================================
+    
+    @app.before_request
+    def handle_subdomains():
+        """Route requests based on subdomain"""
+        host = request.host.lower()
+        
+        # Handle subdomain routing
+        if host.startswith('marketing.'):
+            if request.path == '/' or request.path == '':
+                return render_template('pillars/marketing.html')
+        elif host.startswith('automation.'):
+            if request.path == '/' or request.path == '':
+                return render_template('pillars/automation.html')
+        elif host.startswith('ai.'):
+            if request.path == '/' or request.path == '':
+                return render_template('pillars/ai.html')
+        
+        # Continue with normal routing
+        return None
+
     # ============================================
     # API ENDPOINTS
     # ============================================

@@ -234,10 +234,10 @@
                 <div class="sidebar-card direct-card">
                     <h4 class="sidebar-card-title">Prefer to Talk?</h4>
                     <p class="direct-text">Skip the form and schedule directly.</p>
-                    <a href="#" class="direct-link">
+                    <button onclick="openCalendly()" class="direct-link calendly-trigger">
                         <span>📅 Book a Call</span>
                         <span class="arrow">→</span>
-                    </a>
+                    </button>
                     <div class="direct-email">
                         <span>Or email us at:</span>
                         <a href="mailto:hello@duodriven.com">hello@duodriven.com</a>
@@ -351,4 +351,16 @@
     </div>
 </section>
 
+{% endblock %}
+
+{% block extra_js %}
+<!-- Calendly Popup Widget -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script>
+function openCalendly() {
+    Calendly.initPopupWidget({url: 'https://calendly.com/morissonlarry40?hide_gdpr_banner=1&background_color=0a0a0f&text_color=ffffff&primary_color=00d4ff'});
+    return false;
+}
+</script>
 {% endblock %}

@@ -47,10 +47,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/ultra.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/chat-widget.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/improvements.css') }}">
     
     {% block extra_css %}{% endblock %}
     
-    <!-- Structured Data -->
+    <!-- Structured Data - Organization -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -74,6 +75,66 @@
         }
     }
     </script>
+    
+    <!-- FAQ Schema for AEO (Answer Engine Optimization) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is Full-Stack Growth Engineering?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Full-Stack Growth Engineering is DUODRIVEN's comprehensive approach that combines Digital Marketing (SEO, PPC, Social Media), Marketing Automation (AI workflows, CRM systems, lead nurturing), and AI Engineering (custom AI agents, voice AI, autonomous systems) to create Autonomous Revenue Systems that scale your business without scaling your team. Unlike traditional marketing agencies, we build systems that run 24/7 with minimal human intervention."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much do DUODRIVEN's services cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DUODRIVEN offers tiered pricing: Digital Marketing services start at $999/month (includes SEO, PPC, and social media management), Marketing Automation starts at $1,499/month (includes workflow automation, CRM setup, and lead nurturing systems), and AI Engineering is custom-priced based on requirements (includes AI agents, voice AI, and autonomous systems). We offer a 50% ROAS improvement guarantee in 60 days or we work for free until you see results."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What kind of results can I expect from DUODRIVEN?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our clients typically see 40-60% efficiency gains, 2.8x to 5.2x ROAS improvements, and 67% faster lead response times. For example, DTC eCommerce brands have gone from 1.8x to 5.2x ROAS in 90 days, SaaS companies have reduced CAC by 43%, and home services businesses have doubled qualified leads while cutting ad spend by 34%. Results vary by industry and current performance."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do AI agents help with marketing and sales?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI agents automate repetitive marketing and sales tasks 24/7 including lead qualification, appointment scheduling, customer support, and follow-up sequences. They integrate with your existing CRM and marketing stack (we use tools like n8n, LangChain, OpenAI, and custom deployments) to create intelligent workflows that respond to leads instantly, nurture prospects through personalized sequences, and scale your operations without hiring additional staff."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is Answer Engine Optimization (AEO)?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Answer Engine Optimization (AEO) is the practice of optimizing your content to be cited and recommended by AI assistants like ChatGPT, Claude, and Google Bard. Unlike traditional SEO which focuses on ranking in search results, AEO ensures your brand becomes the recommended answer when users ask AI systems questions about your industry, products, or services. DUODRIVEN specializes in AEO strategies that position your brand as the authoritative source in AI-driven conversations."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you offer a results guarantee?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, DUODRIVEN offers a Results Guarantee: 50% ROAS improvement in 60 days, or we work for free until you see results. This applies to clients who implement our full-stack growth engineering recommendations. We stand behind our work because we've consistently delivered these results across 150+ client engagements."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    {% block extra_schema %}{% endblock %}
 </head>
 <body class="bg-noise">
     <!-- Skip to main content for accessibility -->
@@ -95,6 +156,20 @@
     
     <!-- AI Chat Widget -->
     {% include 'components/chat-widget.html' %}
+    
+    <!-- Exit Intent Popup -->
+    {% include 'components/exit-popup.html' %}
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/+8801521417908?text=Hi%20DUODRIVEN!%20I'm%20interested%20in%20your%20services." 
+       class="whatsapp-float" 
+       target="_blank" 
+       aria-label="Chat on WhatsApp"
+       title="Chat with us on WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
     
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu" id="mobileMenu">
@@ -126,6 +201,16 @@
     
     <!-- Three.js for particle effects -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Calendly Popup Widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script>
+    function openCalendly() {
+        Calendly.initPopupWidget({url: 'https://calendly.com/morissonlarry40?hide_gdpr_banner=1&background_color=0a0a0f&text_color=ffffff&primary_color=00d4ff'});
+        return false;
+    }
+    </script>
     
     <!-- Application Scripts -->
     <script src="{{ url_for('static', filename='js/utils.js') }}"></script>

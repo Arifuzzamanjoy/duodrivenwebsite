@@ -519,3 +519,72 @@ input, textarea, select {
   .lg\:pt-32 { padding-top: 8rem; }
   .lg\:pb-40 { padding-bottom: 10rem; }
 }
+
+/* ============================================
+ * WHATSAPP FLOATING BUTTON
+ * ============================================ */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 4px 20px rgba(37, 211, 102, 0.4),
+    0 0 0 0 rgba(37, 211, 102, 0.5);
+  z-index: 999;
+  transition: all 0.3s ease;
+  animation: whatsapp-pulse 2s infinite;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 
+    0 6px 30px rgba(37, 211, 102, 0.5),
+    0 0 0 0 rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-float:active {
+  transform: scale(0.95);
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 
+      0 4px 20px rgba(37, 211, 102, 0.4),
+      0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 
+      0 4px 20px rgba(37, 211, 102, 0.4),
+      0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 
+      0 4px 20px rgba(37, 211, 102, 0.4),
+      0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* Responsive positioning - above chat widget */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 90px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .whatsapp-float svg {
+    width: 24px;
+    height: 24px;
+  }
+}
