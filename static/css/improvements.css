@@ -1334,32 +1334,30 @@
 }
 
 .calendar-cta {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
     gap: 0.5rem;
-    width: 100%;
-    padding: 1rem 1.5rem;
-    background: linear-gradient(135deg, #00d9ff, #3b82f6);
-    border: none;
-    border-radius: 10px;
-    color: #0a0e1a;
-    font-size: 1rem;
-    font-weight: 600;
+    padding: 0.75rem 1.25rem;
+    background: transparent;
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    border-radius: 8px;
+    color: #00d9ff;
+    font-size: 0.875rem;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
 }
 
 .calendar-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
-    color: #0a0e1a;
+    background: rgba(0, 217, 255, 0.1);
+    border-color: rgba(0, 217, 255, 0.5);
+    color: #00d9ff;
 }
 
 .calendar-cta svg {
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
     stroke: currentColor;
 }
 
