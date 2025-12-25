@@ -73,6 +73,11 @@ def create_app(config_name='default'):
     # ROUTES
     # ============================================
     
+    @app.route('/favicon.ico')
+    def favicon():
+        """Serve favicon from root"""
+        return app.send_static_file('images/favicon.ico')
+    
     @app.route('/')
     def index():
         """Homepage - Main landing page"""
