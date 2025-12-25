@@ -1,1 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><linearGradient id="faviconGradient" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" style="stop-color:#06b6d4"/><stop offset="100%" style="stop-color:#8b5cf6"/></linearGradient></defs><rect width="32" height="32" fill="#030712" rx="6"/><polygon fill="none" stroke="url(#faviconGradient)" stroke-width="1.5" points="16 3 28 10 28 22 16 29 4 22 4 10"/><polygon fill="url(#faviconGradient)" points="16 8 24 20 8 20" opacity=".9"/><polygon fill="url(#faviconGradient)" points="16 8 24 20 8 20" filter="blur(2px)" opacity=".3"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#0a0e1a"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Rounded shield background -->
+  <rect width="32" height="32" rx="8" fill="url(#bgGradient)"/>
+  <!-- Border glow -->
+  <rect width="30" height="30" x="1" y="1" rx="7" fill="none" stroke="#00d9ff" stroke-width="1.5" opacity="0.3"/>
+  <!-- Chevron arrow ">" -->
+  <path d="M10 7 L22 16 L10 25 L14 16 Z" fill="#00d9ff" filter="url(#glow)"/>
+</svg>
