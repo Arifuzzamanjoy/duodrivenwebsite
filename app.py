@@ -108,6 +108,18 @@ def create_app(config_name='default'):
         """Pricing page"""
         return render_template('pricing.html')
 
+    @app.route('/privacy')
+    @app.route('/privacy-policy')
+    def privacy():
+        """Privacy Policy page"""
+        return render_template('privacy.html')
+
+    @app.route('/terms')
+    @app.route('/terms-of-service')
+    def terms():
+        """Terms of Service page"""
+        return render_template('terms.html')
+
     # Note: /blog route is now handled by blog_bp blueprint
 
     @app.route('/pillar/marketing')
