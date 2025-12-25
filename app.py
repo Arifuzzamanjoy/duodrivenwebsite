@@ -7,11 +7,135 @@ from flask import Flask, render_template, request, jsonify, redirect
 import requests
 import os
 import uuid
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 from datetime import datetime
 from dotenv import load_dotenv
 from config import config
 
 load_dotenv()
+
+def send_contact_email(contact_data):
+    """Send email notification for new contact form submission"""
+    try:
+        # Email configuration
+        smtp_server = os.getenv('SMTP_SERVER', 'smtp.gmail.com')
+        smtp_port = int(os.getenv('SMTP_PORT', 587))
+        smtp_username = os.getenv('SMTP_USERNAME', '')
+        smtp_password = os.getenv('SMTP_PASSWORD', '')
+        recipient_email = 'morissonlarry40@gmail.com'
+        
+        if not smtp_username or not smtp_password:
+            print("SMTP credentials not configured")
+            return False
+        
+        # Create email message
+        msg = MIMEMultipart('alternative')
+        msg['Subject'] = f"🚀 New Lead: {contact_data.get('name', 'Unknown')} - {contact_data.get('company', 'N/A')}"
+        msg['From'] = smtp_username
+        msg['To'] = recipient_email
+        
+        # Plain text version
+        text_content = f"""
+New Contact Form Submission
+
+Name: {contact_data.get('name', 'N/A')}
+Email: {contact_data.get('email', 'N/A')}
+Company: {contact_data.get('company', 'N/A')}
+Phone: {contact_data.get('phone', 'N/A')}
+Role: {contact_data.get('role', 'N/A')}
+Budget: {contact_data.get('budget', 'N/A')}
+Services: {', '.join(contact_data.get('services', [])) if isinstance(contact_data.get('services'), list) else contact_data.get('services', 'N/A')}
+Timeline: {contact_data.get('timeline', 'N/A')}
+
+Message:
+{contact_data.get('message', 'No message provided')}
+
+Submitted: {contact_data.get('timestamp', datetime.utcnow().isoformat())}
+        """
+        
+        # HTML version
+        html_content = f"""
+        <html>
+        <body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f5f5f5; padding: 20px;">
+            <div style="background: linear-gradient(135deg, #0a0e1a 0%, #1a1f35 100%); padding: 30px; border-radius: 12px;">
+                <h1 style="color: #00d9ff; margin: 0 0 10px 0;">🚀 New Lead Received!</h1>
+                <p style="color: #a0a0b0; margin: 0;">Someone is interested in DUODRIVEN services</p>
+            </div>
+            
+            <div style="background: white; padding: 30px; border-radius: 12px; margin-top: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                <h2 style="color: #0a0e1a; border-bottom: 2px solid #00d9ff; padding-bottom: 10px;">Contact Details</h2>
+                
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr>
+                        <td style="padding: 10px 0; color: #666; width: 120px;"><strong>Name:</strong></td>
+                        <td style="padding: 10px 0; color: #0a0e1a;">{contact_data.get('name', 'N/A')}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px 0; color: #666;"><strong>Email:</strong></td>
+                        <td style="padding: 10px 0;"><a href="mailto:{contact_data.get('email', '')}" style="color: #00d9ff;">{contact_data.get('email', 'N/A')}</a></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px 0; color: #666;"><strong>Company:</strong></td>
+                        <td style="padding: 10px 0; color: #0a0e1a;">{contact_data.get('company', 'N/A')}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px 0; color: #666;"><strong>Phone:</strong></td>
+                        <td style="padding: 10px 0;"><a href="tel:{contact_data.get('phone', '')}" style="color: #00d9ff;">{contact_data.get('phone', 'N/A')}</a></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px 0; color: #666;"><strong>Role:</strong></td>
+                        <td style="padding: 10px 0; color: #0a0e1a;">{contact_data.get('role', 'N/A')}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px 0; color: #666;"><strong>Budget:</strong></td>
+                        <td style="padding: 10px 0; color: #0a0e1a;">{contact_data.get('budget', 'N/A')}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px 0; color: #666;"><strong>Services:</strong></td>
+                        <td style="padding: 10px 0; color: #0a0e1a;">{', '.join(contact_data.get('services', [])) if isinstance(contact_data.get('services'), list) else contact_data.get('services', 'N/A')}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px 0; color: #666;"><strong>Timeline:</strong></td>
+                        <td style="padding: 10px 0; color: #0a0e1a;">{contact_data.get('timeline', 'N/A')}</td>
+                    </tr>
+                </table>
+                
+                <h3 style="color: #0a0e1a; margin-top: 20px;">Message:</h3>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #00d9ff;">
+                    <p style="margin: 0; color: #333; line-height: 1.6;">{contact_data.get('message', 'No message provided')}</p>
+                </div>
+                
+                <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+                    <p style="color: #999; font-size: 12px; margin: 0;">
+                        Submitted: {contact_data.get('timestamp', datetime.utcnow().isoformat())}
+                    </p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="mailto:{contact_data.get('email', '')}" style="display: inline-block; background: linear-gradient(135deg, #00d9ff, #7c3aed); color: white; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: bold;">Reply to Lead</a>
+            </div>
+        </body>
+        </html>
+        """
+        
+        msg.attach(MIMEText(text_content, 'plain'))
+        msg.attach(MIMEText(html_content, 'html'))
+        
+        # Send email
+        with smtplib.SMTP(smtp_server, smtp_port) as server:
+            server.starttls()
+            server.login(smtp_username, smtp_password)
+            server.sendmail(smtp_username, recipient_email, msg.as_string())
+        
+        print(f"Email sent successfully to {recipient_email}")
+        return True
+        
+    except Exception as e:
+        print(f"Failed to send email: {e}")
+        return False
 
 def create_app(config_name='default'):
     """Application factory"""
@@ -231,7 +355,7 @@ def create_app(config_name='default'):
     def submit_contact():
         """
         Handle contact form submissions.
-        Can forward to n8n webhook or store locally.
+        Sends email notification and can forward to n8n webhook.
         """
         data = request.json
         
@@ -259,12 +383,19 @@ def create_app(config_name='default'):
             'email': data.get('email'),
             'company': data.get('company', ''),
             'phone': data.get('phone', ''),
+            'role': data.get('role', ''),
+            'budget': data.get('budget', ''),
+            'services': data.get('services', []),
+            'timeline': data.get('timeline', ''),
             'message': data.get('message'),
             'service_interest': data.get('service_interest', ''),
             'budget_range': data.get('budget_range', ''),
             'timestamp': datetime.utcnow().isoformat(),
             'source': 'website_contact_form'
         }
+        
+        # Send email notification
+        send_contact_email(contact_data)
         
         if webhook_url:
             try:
