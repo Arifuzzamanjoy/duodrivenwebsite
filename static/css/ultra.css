@@ -594,10 +594,10 @@
 /* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
-    bottom: 90px;
+    bottom: 80px;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
+    display: none; /* Hidden to prevent overlap with ticker */
     flex-direction: column;
     align-items: center;
     gap: 8px;
