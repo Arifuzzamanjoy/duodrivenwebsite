@@ -5,17 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5L7S8ZWP');</script>
-    <!-- End Google Tag Manager -->
-    
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="thBi9M_OZdJPh1VPe0hXXM04K5EMqP5uCynBYFChJ4s">
-    
     <!-- Primary Meta Tags -->
     <title>{% block title %}DUODRIVEN | Full-Stack Growth Engineering{% endblock %}</title>
     <meta name="title" content="{% block meta_title %}DUODRIVEN | Autonomous Revenue Systems & Growth Engineering{% endblock %}">
@@ -39,14 +28,9 @@
     <meta property="twitter:description" content="{% block twitter_description %}We don't do marketing. We build Autonomous Revenue Systems.{% endblock %}">
     <meta property="twitter:image" content="{{ url_for('static', filename='images/og-image.png', _external=True) }}">
     
-    <!-- Favicon - Multiple formats for browser/Google compatibility -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='images/favicon-192x192.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}">
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/favicon.svg') }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/favicon.svg') }}">
     
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -153,11 +137,6 @@
     {% block extra_schema %}{% endblock %}
 </head>
 <body class="bg-noise">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5L7S8ZWP"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    
     <!-- Skip to main content for accessibility -->
     <a href="#main-content" class="sr-only">Skip to main content</a>
     
@@ -222,16 +201,6 @@
     
     <!-- Three.js for particle effects -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
-    <!-- Calendly Popup Widget -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <script>
-    function openCalendly() {
-        Calendly.initPopupWidget({url: 'https://calendly.com/morissonlarry40?hide_gdpr_banner=1&background_color=0a0a0f&text_color=ffffff&primary_color=00d4ff'});
-        return false;
-    }
-    </script>
     
     <!-- Application Scripts -->
     <script src="{{ url_for('static', filename='js/utils.js') }}"></script>

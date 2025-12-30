@@ -414,6 +414,15 @@
   transform: translateY(0);
 }
 
+/* Hero title should appear immediately */
+.hero-title.reveal {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hero-badge.reveal {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
 .reveal-left {
   opacity: 0;
   transform: translateX(-30px);

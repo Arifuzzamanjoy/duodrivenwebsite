@@ -175,13 +175,14 @@
     flex: 1;
     display: flex;
     align-items: center;
-    padding: 120px 0 100px;
+    padding: 120px 0 140px;
 }
 
 .hero-inner {
     max-width: 900px;
     margin: 0 auto;
     text-align: center;
+    padding-bottom: 2rem;
 }
 
 /* Hero Badge */
@@ -473,6 +474,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .trust-badge {
@@ -489,18 +491,57 @@
     stroke: var(--color-accent-emerald);
 }
 
+/* Trust badge wrapper for tooltip */
+.trust-badge-wrapper {
+    position: relative;
+}
+
+.trust-tooltip {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    padding: 12px 16px;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 50;
+}
+
+.trust-badge-wrapper:hover .trust-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.info-icon {
+    cursor: help;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.trust-badge:hover .info-icon {
+    opacity: 1;
+}
+
 /* Hero Ticker */
 .hero-ticker {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(15, 23, 42, 0.8);
+    background: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(59, 130, 246, 0.1);
+    border-top: 1px solid rgba(59, 130, 246, 0.2);
     padding: 16px 0;
     overflow: hidden;
-    z-index: 20;
+    z-index: 25;
 }
 
 .ticker-track {
@@ -3829,6 +3870,19 @@
 
 .form-submit:hover .btn-arrow {
     transform: translateX(4px);
+}
+
+/* WhatsApp Submit Button Styling */
+.form-submit.whatsapp-submit {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+}
+
+.form-submit.whatsapp-submit:hover {
+    box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4);
+}
+
+.form-submit .whatsapp-icon {
+    flex-shrink: 0;
 }
 
 .form-disclaimer {

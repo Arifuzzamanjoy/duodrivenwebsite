@@ -160,6 +160,19 @@
             position: relative;
             z-index: 2;
             max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        /* Hero badges row - live counter + pillar badge */
+        .hero-badges-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
         }
         
         .pillar-badge {
@@ -173,7 +186,7 @@
             font-size: 0.875rem;
             font-weight: 600;
             color: var(--accent-primary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 0;
             animation: glow 3s ease-in-out infinite;
         }
         
@@ -216,7 +229,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
-            margin: 3rem 0;
+            margin: 2rem 0;
             padding: 2rem;
             background: rgba(18, 18, 26, 0.8);
             backdrop-filter: blur(20px);
@@ -224,6 +237,7 @@
             border: 1px solid var(--border-primary);
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
         
         .pillar-stats::before {
@@ -493,9 +507,10 @@
         .cta-buttons {
             display: flex;
             gap: 1rem;
-            justify-content: center;
-            margin-top: 2.5rem;
+            justify-content: flex-start;
+            margin-top: 2rem;
             flex-wrap: wrap;
+            width: 100%;
         }
         
         /* Button styles */
@@ -750,8 +765,16 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 0.7rem;
-            transition: all 0.3s ease;
-            opacity: 0.7;
+            transition: all 0.4s ease;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(-100%);
+        }
+        
+        .back-to-main.visible {
+            opacity: 0.85;
+            pointer-events: auto;
+            transform: translateX(0);
         }
         
         .back-to-main svg {
@@ -1259,6 +1282,24 @@
             
             .cta-buttons {
                 flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .value-props {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+            
+            .hero-badges-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+            
+            .pillar-hero-content {
+                align-items: flex-start;
+                text-align: left;
             }
             
             .calendly-container {
@@ -1474,10 +1515,11 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.5rem 1rem;
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid var(--accent-primary);
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.5);
             border-radius: 100px;
             font-size: 0.875rem;
+            color: #22c55e;
         }
         
         .live-dot {
@@ -1577,10 +1619,11 @@
         /* Quick value props */
         .value-props {
             display: flex;
-            gap: 3rem;
+            gap: 2rem;
             flex-wrap: wrap;
-            justify-content: center;
-            padding: 2rem 0;
+            justify-content: flex-start;
+            padding: 1.5rem 0;
+            width: 100%;
         }
         
         .value-prop {
@@ -1588,6 +1631,7 @@
             align-items: center;
             gap: 0.75rem;
             color: var(--text-secondary);
+            font-size: 0.9rem;
         }
         
         .value-prop svg {
@@ -1800,6 +1844,17 @@
                     stickyCta.classList.add('visible');
                 } else {
                     stickyCta.classList.remove('visible');
+                }
+            }
+            
+            // Show/hide back-to-main button (only show after scrolling 80% of page)
+            const backToMain = document.querySelector('.back-to-main');
+            if (backToMain) {
+                const scrollPercent = (scrolled / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                if (scrollPercent > 80) {
+                    backToMain.classList.add('visible');
+                } else {
+                    backToMain.classList.remove('visible');
                 }
             }
         });

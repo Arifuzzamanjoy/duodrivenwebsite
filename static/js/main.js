@@ -314,6 +314,12 @@ function trackEvent(category, action, label) {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Immediately reveal hero elements for faster perceived load
+    const heroTitle = document.querySelector('.hero-title.reveal');
+    const heroBadge = document.querySelector('.hero-badge.reveal');
+    if (heroTitle) heroTitle.classList.add('revealed');
+    if (heroBadge) heroBadge.classList.add('revealed');
+    
     // Core initializations
     initNavScroll();
     initSmoothScroll();
