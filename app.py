@@ -3,7 +3,8 @@ DUODRIVEN - Full-Stack Growth Engineering
 Flask Application Entry Point
 """
 
-from flask import Flask, render_template, request, jsonify, redirect
+from flask import Flask, render_template, request, jsonify, redirect, send_from_directory
+from flask_compress import Compress
 import requests
 import os
 import uuid
@@ -15,6 +16,9 @@ from dotenv import load_dotenv
 from config import config
 
 load_dotenv()
+
+# Initialize Flask-Compress
+compress = Compress()
 
 def send_contact_email(contact_data):
     """Send email notification for new contact form submission"""
@@ -142,6 +146,24 @@ def create_app(config_name='default'):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
     
+    # ============================================
+    # PERFORMANCE OPTIMIZATIONS
+    # ============================================
+    
+    # Enable Gzip/Brotli compression
+    app.config['COMPRESS_MIMETYPES'] = [
+        'text/html', 'text/css', 'text/xml', 'text/javascript',
+        'application/json', 'application/javascript', 'application/xml',
+        'application/x-javascript', 'image/svg+xml'
+    ]
+    app.config['COMPRESS_LEVEL'] = 6
+    app.config['COMPRESS_MIN_SIZE'] = 500
+    app.config['COMPRESS_ALGORITHM'] = ['br', 'gzip', 'deflate']
+    compress.init_app(app)
+    
+    # Static file caching headers
+    app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 31536000  # 1 year for static files
+    
     # Database configuration
     app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///duodriven.db')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -157,6 +179,22 @@ def create_app(config_name='default'):
     # Create tables
     with app.app_context():
         db.create_all()
+    
+    # ============================================
+    # CACHING MIDDLEWARE
+    # ============================================
+    
+    @app.after_request
+    def add_cache_headers(response):
+        """Add caching headers for static assets"""
+        if request.path.startswith('/static/'):
+            # Cache static files for 1 year (they have versioned URLs)
+            response.headers['Cache-Control'] = 'public, max-age=31536000, immutable'
+            response.headers['Vary'] = 'Accept-Encoding'
+        elif request.path.endswith(('.html', '/')):
+            # HTML pages - cache for 1 hour, revalidate
+            response.headers['Cache-Control'] = 'public, max-age=3600, must-revalidate'
+        return response
     
     # Register blueprints
     from routes.blog import blog_bp
