@@ -99,14 +99,12 @@
             });
         }
         
-        // Show success message
-        const form = document.getElementById('exitPopupForm');
-        form.innerHTML = '<div style="text-align: center; padding: 20px;"><span style="font-size: 3rem;">✅</span><p style="margin-top: 1rem; font-size: 1.1rem; color: var(--color-accent-emerald);">Check your inbox! Calculator is on its way.</p></div>';
+        // Redirect to WhatsApp with email
+        const whatsappMessage = encodeURIComponent(`Hi DUODRIVEN! I'm interested in the AI Marketing ROI Calculator. My email is: ${email}`);
+        window.open(`https://wa.me/+8801962883656?text=${whatsappMessage}`, '_blank');
         
-        // Close popup after delay
-        setTimeout(function() {
-            closeExitPopup();
-        }, 3000);
+        // Close popup after redirect
+        closeExitPopup();
     };
     
     // Close on escape key

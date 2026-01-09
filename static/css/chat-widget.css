@@ -9,10 +9,10 @@
 
 .chat-toggle {
   position: fixed;
-  bottom: var(--space-6);
-  right: var(--space-6);
-  width: 60px;
-  height: 60px;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--color-accent-blue) 0%, var(--color-accent-purple) 100%);
   border: none;
@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   box-shadow: var(--glow-blue-strong);
-  z-index: var(--z-modal);
+  z-index: 1000;
   transition: all var(--transition-normal);
   animation: pulse-glow 2s ease-in-out infinite;
 }
@@ -60,8 +60,8 @@
 
 .chat-widget {
   position: fixed;
-  bottom: calc(var(--space-6) + 70px);
-  right: var(--space-6);
+  bottom: 90px;
+  right: 24px;
   width: 380px;
   max-width: calc(100vw - var(--space-8));
   height: 520px;
@@ -72,7 +72,7 @@
   border: var(--glass-border);
   border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-xl), var(--shadow-glow);
-  z-index: var(--z-modal);
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -88,6 +88,15 @@
   transform: translateY(0) scale(1);
 }
 
+/* Hide WhatsApp button when chat is open */
+.chat-widget.active ~ .whatsapp-float,
+body:has(.chat-widget.active) .whatsapp-float {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
+  pointer-events: none;
+}
+
 /* Mobile full-screen */
 @media (max-width: 480px) {
   .chat-widget {
@@ -101,8 +110,10 @@
   }
   
   .chat-toggle {
-    bottom: var(--space-4);
-    right: var(--space-4);
+    bottom: 16px;
+    right: 16px;
+    width: 50px;
+    height: 50px;
   }
 }
 

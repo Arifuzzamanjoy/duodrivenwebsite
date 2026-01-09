@@ -5282,17 +5282,18 @@
 
 .ai-impact .impact-label {
     font-size: 0.75rem;
-    color: var(--color-text-tertiary);
+    color: var(--color-text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    font-weight: 600;
 }
 
 .ai-impact .impact-value {
     font-size: 1.5rem;
     font-weight: 800;
     background: linear-gradient(135deg, 
-        var(--color-accent-secondary),
-        var(--color-accent-tertiary));
+        var(--color-accent-cyan),
+        var(--color-accent-purple));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
